@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fixxo.Core.Interface.Models
 {
-    public interface ICatalogItem
+    public interface IProduct
     {
     }
 }

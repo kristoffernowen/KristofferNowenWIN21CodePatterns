@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Fixxo.Core.Factories;
 using Fixxo.Core.Interface;
+using Fixxo.Core.Interface.Models;
 using Fixxo.Core.Models;
 using Fixxo.Data.Data;
 using Fixxo.Data.Entities;
+using Fixxo.Data.Factories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fixxo.Data.Services
@@ -17,15 +20,67 @@ namespace Fixxo.Data.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<Product>> GetAsync()
+        public async Task<List<IProduct>> GetAsync()
         {
-            return await _context.Products.Select(entity => _mapper.Map<Product>(entity)).ToListAsync();
+            var items = await _context.CatalogItems.ToListAsync();
+
+            var products = new List<IProduct>();
+
+            foreach (var item in items)
+            {
+                switch (item.Category)
+                {
+                    case "Jacket":
+                        var jacket = await _context.Jackets.FirstOrDefaultAsync(j => j.CatalogItemId == item.Id);
+                        products.Add(_mapper.Map<Jacket>(jacket));
+                        break;
+                    case "Shoes":
+                        var shoes = await _context.Shoes.FirstOrDefaultAsync(s => s.CatalogItemId == item.Id);
+                        products.Add(_mapper.Map<Shoes>(shoes));
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return products;
+
+
+
+            // return null;
+            // return await _context.Products.Select(entity => _mapper.Map<Product>(entity)).ToListAsync();
         }
 
         public async Task CreateAsync(Product model)
         {
-            _context.Products.Add(_mapper.Map<ProductEntity>(model));
-            await _context.SaveChangesAsync();
+            switch (model.Category)
+            {
+                case "Jacket":
+                    var catalogJacket
+                        = GenericFactory.Create<CatalogItemEntity>();
+                    catalogJacket.Category = model.Category;
+                    var catalogJacketEntity = _context.CatalogItems.Add(catalogJacket);
+                    var jacketEntity = JacketEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price);
+                    jacketEntity.CatalogItemId = catalogJacketEntity.Entity.Id;
+                    _context.Jackets.Add(jacketEntity);
+                    await _context.SaveChangesAsync();
+                    break;
+
+                case "Shoes": 
+                    var catalogShoes = GenericFactory.Create<CatalogItemEntity>();
+                    catalogShoes.Category = model.Category;
+                    var catalogShoesEntity = _context.CatalogItems.Add(catalogShoes);
+                    var shoesEntity = ShoesEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price);
+                    shoesEntity.CatalogItemId = catalogShoesEntity.Entity.Id;
+                    _context.Shoes.Add(shoesEntity);
+                    await _context.SaveChangesAsync();
+                    break;
+
+                default: break;
+            }
+
+            // _context.Products.Add(_mapper.Map<ProductEntity>(model));
+            // await _context.SaveChangesAsync();
         }
     }
 }

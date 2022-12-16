@@ -15,7 +15,7 @@ using Fixxo.Data.Data;
  * I - Interface separation = (allt) ska ha ett eget interface som inte har överflödig funktion som används på andra platser
  *
  * D - Dependency Inversion = få bort alla initieringar runtomkring. Initiering ska endast ske på en plats i en factory ( kanske generic ). Klasser ur ett bibliotek
- *                              kan initieras, eftersom jag ändå inte kan gå in och ändra de.
+ *                              kan initieras, eftersom jag ändå inte kan gå in och ändra de. Använd dependency injection
  *
  * DRY - Don't repeat yourself = överväg generic factory, automapper, extensionmetoder. Skönt att slippa skriva extra men mest av allt - finns de bara på en plats
  *                              riskerar jag inte att ändra på en plats och glömma en annan
@@ -31,11 +31,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// builder.Services.AddData(builder.Configuration);
+builder.Services.AddData(builder.Configuration);
 
 
 
-builder.Services.AddNoSqlData(builder.Configuration);
+// builder.Services.AddNoSqlData(builder.Configuration);
 
 var app = builder.Build();
 

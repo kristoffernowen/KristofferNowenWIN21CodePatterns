@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Fixxo.Core.Interface;
+using Fixxo.NoSqlData.Data;
 using Fixxo.NoSqlData.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,7 @@ namespace Fixxo.Data.Data
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<NoSqlContext>(options =>
                 options.UseCosmos(connString, "WIN21"));
-            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductServiceNoSql, ProductService>();
 
             return services;
         }

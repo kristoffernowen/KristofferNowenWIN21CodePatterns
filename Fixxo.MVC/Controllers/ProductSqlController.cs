@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fixxo.MVC.Controllers
 {
-    public class ProductController : Controller
+    public class ProductSqlController : Controller
     {
         private readonly IProductService _productService;
 
-        public ProductController(IProductService productService)
+        public ProductSqlController(IProductService productService)
         {
             _productService = productService;
         }
@@ -21,15 +21,7 @@ namespace Fixxo.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductInputDto dto)
         {
-            _productService.CreateAsync(dto.ToModel());
-
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateNoSql(CreateProductInputDto dto)
-        {
-            _productService.CreateAsync(dto.ToModel());
+            await _productService.CreateAsync(dto.ToModel());
 
             return View();
         }

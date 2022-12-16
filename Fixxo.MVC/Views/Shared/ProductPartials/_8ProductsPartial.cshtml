@@ -1,22 +1,32 @@
-﻿@model List<Fixxo.MVC.Models.OutputDto.GetProductOutputDto>
+﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 <section class="featured-product">
     <div class="featured-grid">
 
        @{
-           if (Model.Count < 9)
+           if (Model != null)
            {
-               @foreach (var product in Model)
+               if (Model.Shoes.Count + Model.Jackets.Count < 9)
                {
-                   <partial name="ProductPartials/_ProductPartial" model="product"/>
+                   @foreach (var product in Model.Jackets)
+                   {
+                       
+                       <partial name="ProductPartials/_JacketPartial" model="product"/>
+                   }
+                   @foreach (var product in Model.Shoes)
+                   {
+                       
+                       <partial name="ProductPartials/_ShoesPartial" model="product"/>
+                   }
+
                }
-           }
-           else
-           {
-               for (var i = 0; i < 8; i++)
-               {
-                    <partial name="ProductPartials/_ProductPartial"  model="Model[i]"/>
-               }
+               @* else *@
+               @* { *@
+               @*     for (var i = 0; i < 8; i++) *@
+               @*     { *@
+               @*         <partial name="ProductPartials/_ProductPartial"  model="Model[i]"/> *@
+               @*     } *@
+               @* } *@
            }
        }
 

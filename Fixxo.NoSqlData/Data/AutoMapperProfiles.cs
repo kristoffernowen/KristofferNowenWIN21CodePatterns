@@ -14,6 +14,8 @@ namespace Fixxo.Data.Data
         public AutoMapperProfiles()
         {
             CreateMap<Product, ProductEntity>().ReverseMap();
+            CreateMap<Product, ShoesEntity>().ReverseMap();
+            CreateMap<Product, JacketEntity>().ReverseMap();
         }
     }
 }

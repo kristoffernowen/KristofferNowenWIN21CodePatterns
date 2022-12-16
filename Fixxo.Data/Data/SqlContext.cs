@@ -14,6 +14,21 @@ namespace Fixxo.Data.Data
         {
         }
 
-        public DbSet<ProductEntity> Products { get; set; }
+        public DbSet<CatalogItemEntity> CatalogItems { get; set; }
+        public DbSet<JacketEntity> Jackets { get; set; }
+        public DbSet<ShoesEntity> Shoes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<JacketEntity>()
+                .HasOne(j => j.CatalogItem)
+                .WithMany(c => c.Jackets)
+                .HasForeignKey( j => j.CatalogItemId);
+
+            modelBuilder.Entity<ShoesEntity>()
+                .HasOne(c => c.CatalogItem)
+                .WithMany(s => s.Shoes)
+                .HasForeignKey(c => c.CatalogItemId);
+        }
     }
 }

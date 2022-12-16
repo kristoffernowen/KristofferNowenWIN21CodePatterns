@@ -1,9 +1,8 @@
-﻿namespace Fixxo.Core.Models;
+﻿using Fixxo.Core.Interface.Models;
 
-public class Shoes : Product
+namespace Fixxo.Core.Models;
+
+public class Shoes : Product, IShoes
 {
-    public string Category { get; set; } = null!;
-    public string Name { get; set; } = null!;
-    public int Rating { get; set; }
-    public decimal Price { get; set; }
+    public int MaxSize { get; set; }
 }

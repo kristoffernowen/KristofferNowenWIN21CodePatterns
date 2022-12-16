@@ -1,4 +1,4 @@
-﻿
+﻿@model Fixxo.Core.Models.Jacket
 
 <div class="featured-box">
     <div class="featured-square">
@@ -34,15 +34,16 @@
         </div>
 
     </div>
-    @* <div class="featured-text"> *@
-    @*     <p>@Model.Category</p> *@
-    @*     <p><strong>@Model.Name</strong></p> *@
-    @*     <div> *@
-    @*         @for (var i = Model.Rating; i > 0; i--) *@
-    @*         { *@
-    @*             <i class="fa-solid fa-star"></i> *@
-    @*         } *@
-    @*     </div> *@
-    @*     <p><strong>$@Model.Price</strong></p> *@
-    @* </div> *@
+    <div class="featured-text">
+        <p>@Model.Category</p>
+        <p><strong>@Model.Name</strong></p>
+        <div>
+            @for (var i = Model.Rating; i > 0; i--)
+            {
+                <i class="fa-solid fa-star"></i>
+            }
+        </div>
+        <p><strong>$@Model.Price</strong></p>
+        <p>@Model.AvailableSizes</p>
+    </div>
 </div>

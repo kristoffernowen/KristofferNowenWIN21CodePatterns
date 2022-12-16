@@ -1,4 +1,5 @@
-﻿@model List<Fixxo.MVC.Models.OutputDto.GetProductOutputDto>
+﻿
+@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 
 @* Försöker separera ansvar och dry genom att ha olika partials istället för en enda stor view, då kan jag dessutom återanvända de *@
@@ -12,10 +13,10 @@
 
 <div class="white-space-div"></div>
 
-<partial name="ProductPartials/_8ProductsPartial"/>
+<partial name="ProductPartials/_8ProductsPartial" model="Model"/>
 
 <div class="white-space-div"></div>
 
-<partial name="ProductPartials/_4ProductsPartial"/>
+<partial name="ProductPartials/_4ProductsPartial" model="Model"/>
 
 @* kanske behöver ett grid för att placera mina partials? *@
