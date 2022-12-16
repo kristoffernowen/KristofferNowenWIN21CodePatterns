@@ -12,4 +12,10 @@ namespace Fixxo.Core.Interface
         public Task<List<Product>> GetAsync();
         public Task CreateAsync(Product model);
     }
+    
+    // public interface IProductServiceNoSql
+    // {
+    //     public Task<List<Product>> GetAsync();
+    //     public Task CreateAsync(Product model);
+    // }
 }

@@ -189,25 +189,33 @@ html {
     margin: 0 auto;
 }
 
+.four-products-flex {
+    display: flex;
+    justify-content: center;
+    margin: 0 5%;
+    width: auto;
+}
+
     .featured-product .featured-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 2fr 2fr;
-        gap: 1rem;
+        gap: .5rem;
     }
 
     .grey-box-50 {
-        width: 50%;
+        width: 100%;
         background-color: grey;
         margin-left: 5%;
     }
 
-    .featured-product .featured-grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-        width: 50%;
-        height: 100%;
-        
-    }
+.featured-product .featured-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    padding-right: 30rem;
+    gap: 2rem;
+}
 
         .featured-product .featured-grid .featured-box {
             height: 20rem;

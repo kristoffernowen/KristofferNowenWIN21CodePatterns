@@ -5,9 +5,11 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.MVC", "Fixxo.MVC\Fixxo.MVC.csproj", "{9215A4B7-9E93-4EEF-86E8-E6423887F2EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixxo.Data", "Fixxo.Data\Fixxo.Data.csproj", "{90A35183-5AB4-46F3-B641-32E8E372AB13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.Data", "Fixxo.Data\Fixxo.Data.csproj", "{90A35183-5AB4-46F3-B641-32E8E372AB13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixxo.Core", "Fixxo.Core\Fixxo.Core.csproj", "{344DD419-4C44-4100-BF10-733703D15960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.Core", "Fixxo.Core\Fixxo.Core.csproj", "{344DD419-4C44-4100-BF10-733703D15960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixxo.NoSqlData", "Fixxo.NoSqlData\Fixxo.NoSqlData.csproj", "{F915D107-22F1-42C7-84DF-D99F93980C93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{344DD419-4C44-4100-BF10-733703D15960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344DD419-4C44-4100-BF10-733703D15960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{344DD419-4C44-4100-BF10-733703D15960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F915D107-22F1-42C7-84DF-D99F93980C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F915D107-22F1-42C7-84DF-D99F93980C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F915D107-22F1-42C7-84DF-D99F93980C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F915D107-22F1-42C7-84DF-D99F93980C93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

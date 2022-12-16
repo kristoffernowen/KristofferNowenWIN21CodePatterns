@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore.cosmos" Version="7.0.1" />
     <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="7.0.1" />
     <PackageReference Include="microsoft.entityframeworkcore.tools" Version="7.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -18,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fixxo.Data\Fixxo.Data.csproj" />
+    <ProjectReference Include="..\Fixxo.NoSqlData\Fixxo.NoSqlData.csproj" />
   </ItemGroup>
 
 </Project>

@@ -31,7 +31,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddData(builder.Configuration);
+// builder.Services.AddData(builder.Configuration);
+
+
+
+builder.Services.AddNoSqlData(builder.Configuration);
 
 var app = builder.Build();
 

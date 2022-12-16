@@ -25,5 +25,13 @@ namespace Fixxo.MVC.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNoSql(CreateProductInputDto dto)
+        {
+            _productService.CreateAsync(dto.ToModel());
+
+            return View();
+        }
     }
 }

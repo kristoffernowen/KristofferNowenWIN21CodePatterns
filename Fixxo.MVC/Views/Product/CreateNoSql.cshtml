@@ -1,0 +1,30 @@
+﻿@model Fixxo.MVC.Models.InputDto.CreateProductInputDto
+
+<partial name="_NavbarPartial" />
+
+<form asp-action="Create" class="col-4 offset-4">
+    <div>
+        <p>Put product Category</p>
+        <input id="create-roleName" asp-for="Category" class="container-fluid" placeholder="Category" />
+
+    </div>
+    <div>
+        <p>Put product name</p>
+        <input asp-for="Name" id="productName" placeholder="name" />
+    </div>
+    <div>
+        <p>Put product rating 1-5</p>
+        <input asp-for="Rating" id="rating" placeholder="rating" />
+    </div>
+    <div>
+        <p>Put product price</p>
+        <input asp-for="Price" id="price" type="number" placeholder="price" />
+    </div>
+
+    <div class="d-flex  flex-column">
+        <button class="btn-info my-3" type="submit">Create</button>
+    </div>
+</form>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+
