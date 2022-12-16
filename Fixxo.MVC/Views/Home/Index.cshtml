@@ -1,10 +1,20 @@
-﻿
+﻿@model List<Fixxo.MVC.Models.OutputDto.GetProductOutputDto>
 
 
 @* Försöker separera ansvar och dry genom att ha olika partials istället för en enda stor view, då kan jag dessutom återanvända de *@
+
+
 
 <div class="background-lightgrey">
     <partial name="_NavbarPartial"/>
     <partial name="_HeaderPartial" />
 </div>
+
+<div class="white-space-div"></div>
+
+<partial name="ProductPartials/_8ProductsPartial"/>
+
+<div class="white-space-div"></div>
+
+<partial name="ProductPartials/_4ProductsPartial"/>
 

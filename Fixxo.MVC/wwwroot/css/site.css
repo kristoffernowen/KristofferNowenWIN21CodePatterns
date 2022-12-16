@@ -182,6 +182,8 @@ html {
     background-color: white;
 }
 
+
+
 .featured-product {
     width: 70%;
     margin: 0 auto;
@@ -192,6 +194,19 @@ html {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 2fr 2fr;
         gap: 1rem;
+    }
+
+    .grey-box-50 {
+        width: 50%;
+        background-color: grey;
+        margin-left: 5%;
+    }
+
+    .featured-product .featured-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        width: 50%;
+        height: 100%;
+        
     }
 
         .featured-product .featured-grid .featured-box {

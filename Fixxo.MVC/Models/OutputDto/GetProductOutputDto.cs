@@ -1,6 +1,6 @@
 ﻿namespace Fixxo.MVC.Models.OutputDto
 {
-    public class ProductOutputDto
+    public class GetProductOutputDto
     {
         public string Category { get; set; } = null!;
         public string Name { get; set; } = null!;

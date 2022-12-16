@@ -1,18 +1,25 @@
 ﻿using Fixxo.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Fixxo.Core.Interface;
+using Fixxo.MVC.Models.OutputDto;
 
 namespace Fixxo.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private readonly IProductService _productService;
 
-        public IActionResult Index()
+        public HomeController(IProductService productService)
         {
-            
+            _productService = productService;
+        }
 
-            return View();
+        public async Task<IActionResult> Index()
+        {
+            var products = await _productService.GetAsync();
+
+            return View( products.Select(model => model.ToDto()).ToList());
         }
 
         public IActionResult Privacy()

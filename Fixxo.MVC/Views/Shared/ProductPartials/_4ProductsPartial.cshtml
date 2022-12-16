@@ -1,0 +1,29 @@
+﻿@model List<Fixxo.MVC.Models.OutputDto.GetProductOutputDto>
+
+<div class="d-flex justify-content-center">
+    <div class="grey-box-50 me-2">
+
+    </div>
+    <section class="featured-product ms-2">
+        <div class="featured-grid featured-grid-4">
+
+            @{
+                if (Model.Count < 5)
+                {
+                    @foreach (var product in Model)
+                    {
+                        <partial name="ProductPartials/_ProductPartial" model="product"/>
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < 4; i++)
+                    {
+                        <partial name="ProductPartials/_ProductPartial"  model="Model[i]"/>
+                    }
+                }
+            }
+
+        </div>
+    </section>
+</div>

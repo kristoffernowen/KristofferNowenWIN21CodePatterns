@@ -1,0 +1,48 @@
+﻿@model Fixxo.MVC.Models.OutputDto.GetProductOutputDto
+
+<div class="featured-box">
+                <div class="featured-square">
+
+                    <div class="quick-view-icons">
+                        <div class="icon-circle">
+                            <a href="https://www.dn.se/"><i class="fa-solid fa-heart"></i></a>
+                        </div>
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-arrows-spin"></i>
+                        </div>
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                    </div>
+                    <div class="red-box">
+                        <div class="corner-container">
+                            <div class="white-corner-div">
+                                <div class="cover-div-1"></div>
+                                <div class="cover-div-2"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="pt-3">QUICK VIEW</p>
+                        </div>
+                        <div class="corner-container">
+                            <div class="white-corner-reverse-div">
+                                <div class="cover-reverse-div-1"></div>
+                                <div class="cover-reverse-div-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="featured-text">
+                    <p>@Model.Category</p>
+                    <p><strong>@Model.Name</strong></p>
+                    <div>
+            @for (var i = Model.Rating; i > 0; i--)
+            {
+                                <i class="fa-solid fa-star"></i>
+            }
+                    </div>
+                    <p><strong>$@Model.Price</strong></p>
+                </div>
+            </div>
