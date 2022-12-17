@@ -25,15 +25,21 @@
                {
                    foreach (var product in Model.Products)
                    {
-                       <partial name="ProductPartials/_ProductPartial" model="product"/>
-                   }
-               }
-               else
-               {
-                   for (var i = 0; i < 8; i++)
-                   {
-                       <partial name="ProductPartials/_ProductPartial"  model="Model.Products[i]"/>
-                   }
+                       if (Model != null)
+                       {
+                            <partial name="ProductPartials/_ProductPartial" model="product" />
+                        }
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < 8; i++)
+                    {
+                        if (Model != null)
+                        {
+                            <partial name="ProductPartials/_ProductPartial"  model="Model.Products[i]"/>
+                        }
+                    }
                }
            }
        }

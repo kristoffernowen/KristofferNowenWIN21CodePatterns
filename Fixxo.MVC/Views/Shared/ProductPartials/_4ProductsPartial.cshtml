@@ -1,35 +1,43 @@
 ﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
-<div class="four-products-flex">
-    <div class="grey-box-50 me-2">
+<div class="four-products-h-grid">    
+    <div class="grey-box-50 me-2 grid-item-1">
 
     </div>
-    <section class="featured-product ms-2">
+    <section class="featured-product ms-2 grid-item-2">
         <div class="featured-grid featured-grid-4">
 
             @{
                 if (Model != null)
                 {
-                    if (Model.Shoes.Count + Model.Jackets.Count < 5)
-                    {
-                        @foreach (var product in Model.Jackets)
-                        {
-                       
-                            <partial name="ProductPartials/_JacketPartial" model="product"/>
-                        }
-                        @foreach (var product in Model.Shoes)
-                        {
-                       
-                            <partial name="ProductPartials/_ShoesPartial" model="product"/>
-                        }
-                    }
-                    @* else *@
+                    @* if (Model.Shoes.Count + Model.Jackets.Count < 5) *@
                     @* { *@
-                    @*     for (var i = 0; i < 4; i++) *@
+                    @*     @foreach (var product in Model.Jackets) *@
                     @*     { *@
-                    @*         <partial name="ProductPartials/_ProductPartial"  model="Model[i]"/> *@
+                    @*     *@
+                    @*         <partial name="ProductPartials/_JacketPartial" model="product"/> *@
+                    @*     } *@
+                    @*     @foreach (var product in Model.Shoes) *@
+                    @*     { *@
+                    @*     *@
+                    @*         <partial name="ProductPartials/_ShoesPartial" model="product"/> *@
                     @*     } *@
                     @* } *@
+
+                    if (Model.Products.Count < 5)
+                    {
+                        foreach (var product in Model.Products)
+                        {
+                            <partial name="ProductPartials/_ProductPartial" model="product"/>
+                        }
+                    }
+                    else
+                    {
+                        for (var i = 0; i < 4; i++)
+                        {
+                            <partial name="ProductPartials/_ProductPartial"  model="Model.Products[i]"/>
+                        }
+                    }
                 }
             }
 

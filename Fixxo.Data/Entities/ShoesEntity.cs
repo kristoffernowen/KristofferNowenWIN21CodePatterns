@@ -2,6 +2,6 @@
 {
     public class ShoesEntity : ProductEntity
     {
-        public int MaxSize { get; set; } = 47;
+        public int MaxSize { get; set; }
     }
 }

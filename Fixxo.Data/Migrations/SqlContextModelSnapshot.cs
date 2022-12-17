@@ -34,7 +34,7 @@ namespace Fixxo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatalogItems");
+                    b.ToTable("CatalogItems", (string)null);
                 });
 
             modelBuilder.Entity("Fixxo.Data.Entities.JacketEntity", b =>
@@ -68,7 +68,7 @@ namespace Fixxo.Data.Migrations
 
                     b.HasIndex("CatalogItemId");
 
-                    b.ToTable("Jackets");
+                    b.ToTable("Jackets", (string)null);
                 });
 
             modelBuilder.Entity("Fixxo.Data.Entities.ShoesEntity", b =>
@@ -101,7 +101,7 @@ namespace Fixxo.Data.Migrations
 
                     b.HasIndex("CatalogItemId");
 
-                    b.ToTable("Shoes");
+                    b.ToTable("Shoes", (string)null);
                 });
 
             modelBuilder.Entity("Fixxo.Data.Entities.JacketEntity", b =>

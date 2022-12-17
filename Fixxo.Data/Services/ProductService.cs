@@ -46,10 +46,6 @@ namespace Fixxo.Data.Services
 
             return products;
 
-
-
-            // return null;
-            // return await _context.Products.Select(entity => _mapper.Map<Product>(entity)).ToListAsync();
         }
 
         public async Task CreateAsync(Product model)
@@ -80,8 +76,6 @@ namespace Fixxo.Data.Services
                 default: break;
             }
 
-            // _context.Products.Add(_mapper.Map<ProductEntity>(model));
-            // await _context.SaveChangesAsync();
         }
 
         public async Task<Jacket> GetJacketAsync(Guid id)

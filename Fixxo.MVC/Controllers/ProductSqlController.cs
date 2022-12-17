@@ -34,15 +34,14 @@ namespace Fixxo.MVC.Controllers
         {
             var product = await _catalogItemService.GetAsync(id);
 
-            switch (product.Category)
-            {
-                case "Jacket":
-                    return RedirectToAction("Jacket", "ProductSql", new { id });
-                case "Shoes":
-                    return RedirectToAction("Shoes", "ProductSql", new { id });
-            }
+            // inte nöjd över den här lösningen. Nosql hade nog varit bra men hinner inte bygga det, så.....
 
-            return RedirectToAction("Index", "Home");
+            return product.Category switch
+            {
+                "Jacket" => RedirectToAction("Jacket", "ProductSql", new {id}),
+                "Shoes" => RedirectToAction("Shoes", "ProductSql", new {id}),
+                _ => RedirectToAction("Index", "Home")
+            };
         }
 
         [HttpGet]
