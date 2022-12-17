@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Security.Cryptography.X509Certificates;
+using AutoMapper;
 using Fixxo.Core.Factories;
 using Fixxo.Core.Interface;
 using Fixxo.Core.Interface.Models;
@@ -82,5 +83,18 @@ namespace Fixxo.Data.Services
             // _context.Products.Add(_mapper.Map<ProductEntity>(model));
             // await _context.SaveChangesAsync();
         }
+
+        public async Task<Jacket> GetJacketAsync(Guid id)
+        {
+            var jacket = await _context.Jackets.FirstOrDefaultAsync(x => x.CatalogItemId.Equals(id));
+            return _mapper.Map<Jacket>(jacket);
+        }
+
+        public async Task<Shoes> GetShoesAsync(Guid id)
+        {
+            var shoes = await _context.Shoes.FirstOrDefaultAsync(s => s.CatalogItemId.Equals(id));
+            return _mapper.Map<Shoes>(shoes);
+        }
+        
     }
 }

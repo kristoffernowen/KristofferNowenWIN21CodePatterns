@@ -14,6 +14,8 @@ namespace Fixxo.Core.Interface
         public Task CreateAsync(Product model);
 
         // public Task<List<Catalog>> GetCatalogAsync();
+        public Task<Shoes> GetShoesAsync(Guid id);
+        public Task<Jacket> GetJacketAsync(Guid id);
 
     }
 }

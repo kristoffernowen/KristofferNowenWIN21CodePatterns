@@ -16,6 +16,7 @@ namespace Fixxo.Data.Data
             CreateMap<Product, ProductEntity>().ReverseMap();
             CreateMap<Jacket, JacketEntity>().ReverseMap();
             CreateMap<Shoes, ShoesEntity>().ReverseMap();
+            CreateMap<CatalogItem, CatalogItemEntity>().ReverseMap();
         }
     }
 }

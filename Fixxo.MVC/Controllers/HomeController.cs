@@ -72,6 +72,8 @@ namespace Fixxo.MVC.Controllers
                 {
                     viewModel.Shoes.Add((product) as Shoes);
                 }
+
+                viewModel.Products.Add((product) as Product);
             }
 
             return View(viewModel);

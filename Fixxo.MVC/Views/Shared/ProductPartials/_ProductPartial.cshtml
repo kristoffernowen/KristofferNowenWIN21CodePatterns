@@ -1,4 +1,4 @@
-﻿
+﻿@model Fixxo.Core.Models.Product
 
 <div class="featured-box">
     <div class="featured-square">
@@ -34,15 +34,21 @@
         </div>
 
     </div>
-    @* <div class="featured-text"> *@
-    @*     <p>@Model.Category</p> *@
-    @*     <p><strong>@Model.Name</strong></p> *@
-    @*     <div> *@
-    @*         @for (var i = Model.Rating; i > 0; i--) *@
-    @*         { *@
-    @*             <i class="fa-solid fa-star"></i> *@
-    @*         } *@
-    @*     </div> *@
-    @*     <p><strong>$@Model.Price</strong></p> *@
-    @* </div> *@
+    <div class="featured-text">
+        <p>@Model.Category</p>
+        <p><strong>@Model.Name</strong></p>
+        <div>
+            @for (var i = Model.Rating; i > 0; i--)
+            {
+                <i class="fa-solid fa-star"></i>
+            }
+        </div>
+        <p><strong>$@Model.Price</strong></p>
+        <a asp-controller="ProductSql" asp-action="Details" asp-route-id="@Model.CatalogItemId" >Details</a>
+        
+        
+       @* kan jag checka category här och göra anropet enklare? *@
+        
+
+    </div>
 </div>

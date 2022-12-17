@@ -14,6 +14,7 @@ namespace Fixxo.Data.Data
             services.AddDbContext<SqlContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Sql")));
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICatalogItemService, CatalogItemService>();
 
             return services;
         }

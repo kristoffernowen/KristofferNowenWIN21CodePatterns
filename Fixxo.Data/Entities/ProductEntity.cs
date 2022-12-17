@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Fixxo.Data.Entities
 {
@@ -12,6 +7,9 @@ namespace Fixxo.Data.Entities
         [Key]
         public Guid Id { get; set; }
 
+        public CatalogItemEntity CatalogItem { get; set; } = null!;
+        
+        public Guid CatalogItemId { get; set; }
         public string Category { get; set; } = null!;
         public string Name { get; set; } = null!;
         public int Rating { get; set; }
