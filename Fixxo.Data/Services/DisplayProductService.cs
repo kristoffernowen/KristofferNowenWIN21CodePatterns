@@ -11,12 +11,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Fixxo.Data.Services
 {
-    public class ProductService : IProductService
+    public class DisplayProductService : IDisplayProductService
     {
         private readonly SqlContext _context;
         private readonly IMapper _mapper;
 
-        public ProductService(SqlContext context, IMapper mapper)
+        public DisplayProductService(SqlContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -48,35 +48,7 @@ namespace Fixxo.Data.Services
 
         }
 
-        public async Task CreateAsync(Product model)
-        {
-            switch (model.Category)
-            {
-                case "Jacket":
-                    var catalogJacket
-                        = GenericFactory.Create<CatalogItemEntity>();
-                    catalogJacket.Category = model.Category;
-                    var catalogJacketEntity = _context.CatalogItems.Add(catalogJacket);
-                    var jacketEntity = JacketEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price);
-                    jacketEntity.CatalogItemId = catalogJacketEntity.Entity.Id;
-                    _context.Jackets.Add(jacketEntity);
-                    await _context.SaveChangesAsync();
-                    break;
-
-                case "Shoes": 
-                    var catalogShoes = GenericFactory.Create<CatalogItemEntity>();
-                    catalogShoes.Category = model.Category;
-                    var catalogShoesEntity = _context.CatalogItems.Add(catalogShoes);
-                    var shoesEntity = ShoesEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price);
-                    shoesEntity.CatalogItemId = catalogShoesEntity.Entity.Id;
-                    _context.Shoes.Add(shoesEntity);
-                    await _context.SaveChangesAsync();
-                    break;
-
-                default: break;
-            }
-
-        }
+       
 
         public async Task<Jacket> GetJacketAsync(Guid id)
         {

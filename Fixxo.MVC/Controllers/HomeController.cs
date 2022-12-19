@@ -9,11 +9,15 @@ namespace Fixxo.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IProductService _productService;
 
-        public HomeController(IProductService productService)
+        // ansvarar för home view enligt srp
+
+
+        private readonly IDisplayProductService _displayProductService;
+
+        public HomeController(IDisplayProductService displayProductService)
         {
-            _productService = productService;
+            _displayProductService = displayProductService;
         }
 
 
@@ -21,7 +25,7 @@ namespace Fixxo.MVC.Controllers
         {
             
 
-            var products = await _productService.GetAsync();
+            var products = await _displayProductService.GetAsync();
 
             var viewModel = new HomeIndexViewModel();
 
@@ -31,17 +35,6 @@ namespace Fixxo.MVC.Controllers
             }
 
             return View(viewModel);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

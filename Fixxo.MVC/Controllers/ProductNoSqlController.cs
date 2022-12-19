@@ -6,11 +6,11 @@
 // {
 //     public class ProductNoSqlController : Controller
 //     {
-//         private readonly IProductServiceNoSql _productService;
+//         private readonly IProductServiceNoSql _displayProductService;
 //
-//         public ProductNoSqlController(IProductServiceNoSql productService)
+//         public ProductNoSqlController(IProductServiceNoSql displayProductService)
 //         {
-//             _productService = productService;
+//             _displayProductService = displayProductService;
 //         }
 
         // public IActionResult Create()
@@ -21,7 +21,7 @@
         // [HttpPost]
         // public async Task<IActionResult> Create(CreateProductInputDto dto)
         // {
-        //     await _productService.CreateAsync(dto.ToModel());
+        //     await _displayProductService.CreateAsync(dto.ToModel());
         //
         //     return View();
         // }
@@ -32,7 +32,7 @@
 //            
 //             
 //
-//             await _productService.CreateAsync(dto.ToModel());
+//             await _displayProductService.CreateAsync(dto.ToModel());
 //
 //             return View();
 //         }

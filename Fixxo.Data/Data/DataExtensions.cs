@@ -13,8 +13,9 @@ namespace Fixxo.Data.Data
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<SqlContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Sql")));
-            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IDisplayProductService, DisplayProductService>();
             services.AddScoped<ICatalogItemService, CatalogItemService>();
+            services.AddScoped<ICreateProductService, CreateProductService>();
 
             return services;
         }

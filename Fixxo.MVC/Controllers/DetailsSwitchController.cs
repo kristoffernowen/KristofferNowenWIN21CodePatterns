@@ -1,0 +1,33 @@
+﻿using Fixxo.Core.Interface;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Fixxo.MVC.Controllers
+{
+    public class DetailsSwitchController : Controller
+    {
+
+        // srp sköter switch för vilken details produkt
+
+        private readonly ICatalogItemService _catalogItemService;
+
+        public DetailsSwitchController(ICatalogItemService catalogItemService)
+        {
+            _catalogItemService = catalogItemService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var product = await _catalogItemService.GetAsync(id);
+
+            // inte nöjd över den här lösningen. Nosql utan ef core hade nog varit bra men hinner inte bygga det, så.....
+
+            return product.Category switch
+            {
+                "Jacket" => RedirectToAction("Jacket", "DetailsProducts", new { id }),
+                "Shoes" => RedirectToAction("Shoes", "DetailsProducts", new { id }),
+                _ => RedirectToAction("Index", "Home")
+            };
+        }
+    }
+}
