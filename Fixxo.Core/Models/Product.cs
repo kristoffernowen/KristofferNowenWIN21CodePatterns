@@ -26,5 +26,6 @@ namespace Fixxo.Core.Models
         public int Rating { get; set; }
         public decimal Price { get; set; }
         public Guid CatalogItemId { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

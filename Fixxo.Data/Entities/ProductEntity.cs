@@ -14,5 +14,6 @@ namespace Fixxo.Data.Entities
         public string Name { get; set; } = null!;
         public int Rating { get; set; }
         public decimal Price { get; set; }
+        public string ImgUrl { get; set; } = null!;
     }
 }

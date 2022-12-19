@@ -2,6 +2,15 @@ using Fixxo.Data.Data;
 
 
 
+/* Vet inte om jag kanske gick ifrån instruktionerna lite grann med min projektuppbyggnad, men jag tyckte verkligen om det här mönstret och det följer grundtanken med solid bra tycker jag.
+ * Det separerar ansvaret iaf. Jag hade nog velat ha det här i nosql, men fick inte till det med ef core. Hade jag haft tid hade jag nog gjort om det med ren nosql. Tack vare
+ * arkitekturen skulle jag bara behöva ändra på Data projektet och kanske ett interface i core och sedan lägga till nosql. Den nosql som finns här var mot ef core.
+ *
+ *Jag hann inte bygga färdigt det här, men jag hoppas jag gett bra exempel på solid och dry principerna ändå.
+ *
+ */
+
+
 /*  MY SOLID MANIFESTO
  *
  * S - Separate responsibility = varje fil ansvarar för "en sak"
@@ -28,7 +37,6 @@ using Fixxo.Data.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddData(builder.Configuration);
@@ -43,7 +51,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
