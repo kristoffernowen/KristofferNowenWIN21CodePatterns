@@ -43,5 +43,11 @@ namespace Fixxo.Data.Services
             return products;
 
         }
+
+        public List<Product> ToProduct(List<IProduct> iProducts)
+        {
+            var products = iProducts.Select(x => x as Product).ToList();
+            return products!;
+        }
     }
 }

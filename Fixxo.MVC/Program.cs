@@ -1,5 +1,5 @@
 using Fixxo.Data.Data;
-
+using Fixxo.MVC.Services;
 
 
 /* Vet inte om jag kanske gick ifrån instruktionerna lite grann med min projektuppbyggnad, men jag tyckte verkligen om det här mönstret och det följer grundtanken med solid bra tycker jag.
@@ -40,7 +40,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddData(builder.Configuration);
-
+builder.Services.AddScoped<GetProductsService>();
 
 
 // builder.Services.AddNoSqlData(builder.Configuration);
