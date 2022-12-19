@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Fixxo.Core.Factories;
-using Fixxo.Core.Interface;
 using Fixxo.Core.Interface.Models;
+using Fixxo.Core.Interface.Services;
 using Fixxo.Core.Models;
 using Fixxo.Data.Entities;
 using Fixxo.NoSqlData.Data;

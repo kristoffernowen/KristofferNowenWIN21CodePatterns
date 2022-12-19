@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Fixxo.Data.Interfaces.Entities;
 
 namespace Fixxo.Data.Entities
 {
-    public class ProductEntity
+    public class ProductEntity : IProductEntity
     {
         [Key]
         public Guid Id { get; set; }

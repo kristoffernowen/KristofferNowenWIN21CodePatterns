@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Fixxo.Core.Interface;
 using Fixxo.NoSqlData.Data;
 using Fixxo.NoSqlData.Services;
 using Microsoft.EntityFrameworkCore;
+using Fixxo.Core.Interface.Services;
 
 namespace Fixxo.Data.Data
 {

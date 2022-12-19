@@ -1,7 +1,7 @@
 ﻿using Fixxo.Core.Interface.Models;
 using Fixxo.Core.Models;
 
-namespace Fixxo.Core.Interface;
+namespace Fixxo.Core.Interface.Services;
 
 public interface IDisplayAllProductsService
 {

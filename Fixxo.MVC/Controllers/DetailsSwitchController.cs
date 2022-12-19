@@ -1,4 +1,4 @@
-﻿using Fixxo.Core.Interface;
+﻿using Fixxo.Core.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fixxo.MVC.Controllers

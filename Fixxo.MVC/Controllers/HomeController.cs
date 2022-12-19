@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Fixxo.Core.Interface;
 using Fixxo.MVC.Factories;
+using Fixxo.Core.Interface.Services;
 
 namespace Fixxo.MVC.Controllers
 {

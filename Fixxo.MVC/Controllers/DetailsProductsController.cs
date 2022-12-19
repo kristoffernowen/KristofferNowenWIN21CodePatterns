@@ -1,4 +1,4 @@
-﻿using Fixxo.Core.Interface;
+﻿using Fixxo.Core.Interface.Services;
 using Fixxo.MVC.Models.OutputDto;
 using Microsoft.AspNetCore.Mvc;
 

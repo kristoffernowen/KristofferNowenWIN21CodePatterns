@@ -1,6 +1,6 @@
 ﻿using Fixxo.Core.Models;
 
-namespace Fixxo.Core.Interface
+namespace Fixxo.Core.Interface.Services
 {
     public interface ICatalogItemService
     {
