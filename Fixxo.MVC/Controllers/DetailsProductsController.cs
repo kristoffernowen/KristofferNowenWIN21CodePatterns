@@ -1,11 +1,12 @@
 ﻿using Fixxo.Core.Interface;
+using Fixxo.MVC.Models.OutputDto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fixxo.MVC.Controllers
 {
     public class DetailsProductsController : Controller
     {
-        // srp : responsible for view of selected details product. Many different products, but always the same action action. So one controller
+        // srp : responsible for view of selected details product. Many different products, but always the same action action. So one controller  english yeah baby!!!!!!!!!!
 
         private readonly IDisplayProductService _displayProductService;
 
@@ -17,22 +18,17 @@ namespace Fixxo.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Jacket(string id)
         {
-            var guidId = new Guid(id);
+            var jacket = await _displayProductService.GetJacketAsync(new Guid(id));
 
-            var jacket = await _displayProductService.GetJacketAsync(guidId);
-
-            return View(jacket);
+            return View(jacket.ToDto());
         }
 
         [HttpGet]
         public async Task<IActionResult> Shoes(string id)
         {
+            var shoes = await _displayProductService.GetShoesAsync(new Guid(id));
 
-            var guidId = new Guid(id);
-
-            var shoes = await _displayProductService.GetShoesAsync(guidId);
-
-            return View(shoes);
+            return View(shoes.ToDto());
         }
     }
 }
