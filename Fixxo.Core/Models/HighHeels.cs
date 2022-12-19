@@ -2,7 +2,7 @@
 
 namespace Fixxo.Core.Models
 {
-    public class HighHeels : IHighHeels
+    public class HighHeels : Product, IHighHeels, IProduct
     {
         public string Category { get; set; } = null!;
         public string Name { get; set; } = null!;

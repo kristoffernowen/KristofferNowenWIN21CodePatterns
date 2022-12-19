@@ -11,6 +11,8 @@ namespace Fixxo.Core.Interface.Services
 
         public Task<Shoes> GetShoesAsync(Guid id);
         public Task<Jacket> GetJacketAsync(Guid id);
+        public Task<Boots> GetBootsAsync(Guid id);
+        public Task<HighHeels> GetHighHeelsAsync(Guid id);
 
     }
 }

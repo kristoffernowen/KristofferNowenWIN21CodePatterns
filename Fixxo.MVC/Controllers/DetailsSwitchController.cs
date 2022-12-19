@@ -26,6 +26,8 @@ namespace Fixxo.MVC.Controllers
             {
                 "Jacket" => RedirectToAction("Jacket", "DetailsProducts", new { id }),
                 "Shoes" => RedirectToAction("Shoes", "DetailsProducts", new { id }),
+                "Boots" => RedirectToAction("Boots", "DetailsProducts", new { id }),
+                "High heels" => RedirectToAction("HighHeels", "DetailsProducts", new { id }),
                 _ => RedirectToAction("Index", "Home")
             };
         }

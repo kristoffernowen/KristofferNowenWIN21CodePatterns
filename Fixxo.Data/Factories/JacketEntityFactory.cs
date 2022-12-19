@@ -4,7 +4,7 @@ namespace Fixxo.Data.Factories
 {
     public static class JacketEntityFactory
     {
-        public static JacketEntity Create(string category, string name, int rating, decimal price, string imgUrl)
+        public static JacketEntity Create(string category, string name, int rating, decimal price, string imgUrl, Guid catalogItemId)
         {
             return new JacketEntity
             {
@@ -12,7 +12,8 @@ namespace Fixxo.Data.Factories
                 Name = name,
                 Rating = rating,
                 Price = price,
-                ImgUrl = imgUrl
+                ImgUrl = imgUrl,
+                CatalogItemId = catalogItemId
             };
         }
     }

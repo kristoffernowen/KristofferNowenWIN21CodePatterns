@@ -24,46 +24,42 @@ public class CreateProductService : ICreateProductService
 
         // inte så dry men jag har inte lärt mig dynamiskt och generiskt så bra...
 
+        // måste hämta id catalogitemid här för det går inte i static fabriken, sen är det bara context.add och save async kvar som jag inte bryter ut
 
         switch (model.Category)
         {
             case "Jacket":
-                var jacketId = await _catalogItemService.CreateAsync(model.Category);
 
-                var jacketEntity = JacketEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price, model.ImgUrl);
-                jacketEntity.CatalogItemId = jacketId;
+                _context.Jackets!.Add(JacketEntityFactory.Create
+                (model.Category, model.Name, model.Rating, model.Price, model.ImgUrl,
+                    await _catalogItemService.CreateAsync(model.Category)));
 
-                _context.Jackets.Add(jacketEntity);
                 await _context.SaveChangesAsync();
                 break;
 
             case "Shoes":
-                var shoesId = await _catalogItemService.CreateAsync(model.Category);
-                var shoesEntity = ShoesEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price,
-                    model.ImgUrl);
-                shoesEntity.CatalogItemId = shoesId;
 
-                _context.Shoes.Add(shoesEntity);
+                _context.Shoes!.Add(ShoesEntityFactory.Create
+                (model.Category, model.Name, model.Rating, model.Price,
+                    model.ImgUrl, await _catalogItemService.CreateAsync(model.Category)));
+
                 await _context.SaveChangesAsync();
                 break;
 
             case "Boots":
-                var bootsId = await _catalogItemService.CreateAsync(model.Category);
+                
+                _context.Boots.Add(BootsEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price,
+                    model.ImgUrl, await _catalogItemService.CreateAsync(model.Category)));
 
-                var bootsEntity = BootsEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price,
-                    model.ImgUrl);
-                bootsEntity.CatalogItemId = bootsId;
-
-                _context.Boots.Add(bootsEntity);
                 await _context.SaveChangesAsync();
                 break;
 
-            case "HighHeels":
-                var highHeelsId = await _catalogItemService.CreateAsync(model.Category);
-                var highHeelsEntity = HighHeelsEntityFactory.Create(model.Category, model.Name, model.Rating,
-                    model.Price,
-                    model.ImgUrl);
-                _context.HighHeels.Add(highHeelsEntity);
+            case "High heels":
+                
+                
+                _context.HighHeels.Add(HighHeelsEntityFactory.Create(model.Category, model.Name, model.Rating,
+                    model.Price, model.ImgUrl, await _catalogItemService.CreateAsync(model.Category)));
+
                 await _context.SaveChangesAsync();
                 break;
         }

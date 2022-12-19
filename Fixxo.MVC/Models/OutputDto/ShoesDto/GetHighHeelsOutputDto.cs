@@ -1,7 +1,10 @@
-﻿namespace Fixxo.MVC.Interfaces.Models.OutputDto;
+﻿using Fixxo.MVC.Interfaces.Models.OutputDto;
 
-public interface IGetShoesOutputDto
+namespace Fixxo.MVC.Models.OutputDto.ShoesDto;
+
+public class GetHighHeelsOutputDto : IGetShoesOutputDto, IGetHighHeelsOutputDto
 {
+    public int HeightOfHeels { get; set; }
     public int MaxSize { get; set; }
     public string Id { get; set; }
     public string Category { get; set; }

@@ -1,6 +1,6 @@
 ﻿using Fixxo.MVC.Interfaces.Models.OutputDto;
 
-namespace Fixxo.MVC.Models.OutputDto.Shoes
+namespace Fixxo.MVC.Models.OutputDto.ShoesDto
 {
     public class GetShoesOutputDto : GetProductOutputDto, IGetShoesOutputDto
     {

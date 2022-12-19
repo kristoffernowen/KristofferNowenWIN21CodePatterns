@@ -25,6 +25,16 @@ namespace Fixxo.Data.Services
             return _mapper.Map<Jacket>(jacket);
         }
 
+        public async Task<Boots> GetBootsAsync(Guid id)
+        {
+            return _mapper.Map<Boots>(await _context.Boots.FirstOrDefaultAsync(x => x.CatalogItemId.Equals(id)));
+        }
+
+        public async Task<HighHeels> GetHighHeelsAsync(Guid id)
+        {
+            return _mapper.Map<HighHeels>(await _context.HighHeels.FirstOrDefaultAsync(x => x.CatalogItemId.Equals(id)));
+        }
+
         public async Task<Shoes> GetShoesAsync(Guid id)
         {
             var shoes = await _context.Shoes.FirstOrDefaultAsync(s => s.CatalogItemId.Equals(id));

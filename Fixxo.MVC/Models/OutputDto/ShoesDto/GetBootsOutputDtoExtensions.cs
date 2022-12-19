@@ -1,12 +1,12 @@
 ﻿using Fixxo.Core.Models;
 
-namespace Fixxo.MVC.Models.OutputDto.Shoes;
+namespace Fixxo.MVC.Models.OutputDto.ShoesDto;
 
-public static class GetShoesOutputDtoExtensions
+public static class GetBootsOutputDtoExtensions
 {
-    public static GetShoesOutputDto ToDto(this Shoes model)
+    public static GetBootsOutputDto ToDto(this Boots model)
     {
-        return new GetShoesOutputDto
+        return new GetBootsOutputDto
         {
             Category = model.Category,
             Id = model.Id,
@@ -14,7 +14,6 @@ public static class GetShoesOutputDtoExtensions
             Name = model.Name,
             Rating = model.Rating,
             Price = model.Price,
-            MaxSize = model.MaxSize,
             ImgUrl = model.ImgUrl
         };
     }

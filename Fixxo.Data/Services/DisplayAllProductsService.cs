@@ -23,17 +23,24 @@ namespace Fixxo.Data.Services
 
             var products = new List<IProduct>();
 
+            if (items == null) return products;
+
             foreach (var item in items)
             {
                 switch (item.Category)
                 {
                     case "Jacket":
-                        var jacket = await _context.Jackets.FirstOrDefaultAsync(j => j.CatalogItemId == item.Id);
-                        products.Add(_mapper.Map<Jacket>(jacket));
+                        products.Add(_mapper.Map<Jacket>(await _context.Jackets!.FirstOrDefaultAsync(j => j.CatalogItemId == item.Id)));
                         break;
                     case "Shoes":
-                        var shoes = await _context.Shoes.FirstOrDefaultAsync(s => s.CatalogItemId == item.Id);
-                        products.Add(_mapper.Map<Shoes>(shoes));
+                        products.Add(_mapper.Map<Shoes>(await _context.Shoes!.FirstOrDefaultAsync(s => s.CatalogItemId == item.Id)));
+                        break;
+                    case "Boots":
+
+                        products.Add(_mapper.Map<Boots>(await _context.Boots.FirstOrDefaultAsync(b => b.CatalogItemId == item.Id)));
+                        break;
+                    case "High heels":
+                        products.Add(_mapper.Map<HighHeels>(await _context.HighHeels.FirstOrDefaultAsync(h => h.CatalogItemId == item.Id)));
                         break;
                 }
             }

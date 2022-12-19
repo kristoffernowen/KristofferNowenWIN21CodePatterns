@@ -1,4 +1,4 @@
-﻿@model Fixxo.MVC.Models.OutputDto.GetJacketOutputDto
+﻿@model Fixxo.MVC.Models.OutputDto.ShoesDto.GetBootsOutputDto
 
 <div class="shoes-grid featured-product details">
     <div class="item1 img-container">
@@ -7,8 +7,10 @@
     <div class="item2">
         <h3>@Model.Name</h3>
         <p>@Model.Category</p>
-        <p>Available sizes: @Model.AvailableSizes</p>
+        <p>Max size: @Model.MaxSize</p>
         <p>Rating : @Model.Rating</p>
+        <p>Knee High: @Model.isKneeHigh</p>
+        <p>@Model.Season</p>
         <div>
             @for (var i = Model.Rating; i > 0; i--)
             {
@@ -28,8 +30,10 @@
     <div class="item4">
         <h3>@Model.Name</h3>
         <p>@Model.Category</p>
-        <p>Available sizes: @Model.AvailableSizes</p>
+        <p>Max size: @Model.MaxSize</p>
         <p>Rating : @Model.Rating</p>
+        <p>Knee High: @Model.isKneeHigh</p>
+        <p>@Model.Season</p>
         <div>
             @for (var i = Model.Rating; i > 0; i--)
             {

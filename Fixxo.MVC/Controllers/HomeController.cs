@@ -23,8 +23,8 @@ namespace Fixxo.MVC.Controllers
         public async Task<IActionResult> Index()
         {
             var iproductsList = await _displayAllProductsService.GetAsync();
-            
-            return View(HomeIndexViewModelFactory.Create(iproductsList));
+
+            return iproductsList != null ? View(HomeIndexViewModelFactory.Create(iproductsList)) : View();
         }
     }
 }
