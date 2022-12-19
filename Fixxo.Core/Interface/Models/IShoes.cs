@@ -7,4 +7,5 @@ public interface IShoes
     public int Rating { get; set; }
     public decimal Price { get; set; }
     public int MaxSize { get; set; }
+    public int MinSize { get; set; }
 }

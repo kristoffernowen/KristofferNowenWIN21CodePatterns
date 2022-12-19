@@ -12,6 +12,9 @@ namespace Fixxo.Data.Data
         public DbSet<CatalogItemEntity>? CatalogItems { get; set; }
         public DbSet<JacketEntity>? Jackets { get; set; }
         public DbSet<ShoesEntity>? Shoes { get; set; }
+        public DbSet<BootsEntity> Boots { get; set; }
+        public DbSet<HighHeelsEntity> HighHeels { get; set; }
+
 
         // Jag ville egentligen ha sparat in ProductEntity och lagt som IProduct på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
         // på Product, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
@@ -27,6 +30,8 @@ namespace Fixxo.Data.Data
                 .HasOne(c => c.CatalogItem)
                 .WithMany(s => s.Shoes)
                 .HasForeignKey(c => c.CatalogItemId);
+
+            modelBuilder.Entity<BootsEntity>().Property(b => b.Season).HasConversion<string>();
         }
     }
 }

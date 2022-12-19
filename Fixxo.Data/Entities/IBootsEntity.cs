@@ -1,8 +1,8 @@
-﻿using Fixxo.Data.Entities;
+﻿using Fixxo.Core.Models.Enums;
 
-namespace Fixxo.Data.Interfaces.Entities.ShoeEntities;
+namespace Fixxo.Data.Entities;
 
-public interface IShoesEntity
+public interface IBootsEntity
 {
     int MaxSize { get; set; }
     int MinSize { get; set; }
@@ -14,4 +14,6 @@ public interface IShoesEntity
     int Rating { get; set; }
     decimal Price { get; set; }
     string ImgUrl { get; set; }
+    bool IsKneeHigh { get; set; }
+    Season Season { get; set; } 
 }

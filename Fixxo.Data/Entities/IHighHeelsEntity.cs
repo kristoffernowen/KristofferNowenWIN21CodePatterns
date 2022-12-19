@@ -1,8 +1,6 @@
-﻿using Fixxo.Data.Entities;
+﻿namespace Fixxo.Data.Entities;
 
-namespace Fixxo.Data.Interfaces.Entities.ShoeEntities;
-
-public interface IShoesEntity
+internal interface IHighHeelsEntity
 {
     int MaxSize { get; set; }
     int MinSize { get; set; }
@@ -14,4 +12,5 @@ public interface IShoesEntity
     int Rating { get; set; }
     decimal Price { get; set; }
     string ImgUrl { get; set; }
+    int HeightOfHeels { get; set; }
 }
