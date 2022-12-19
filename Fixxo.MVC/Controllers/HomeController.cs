@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Fixxo.Core.Interface;
 using Fixxo.Core.Models;
+using Fixxo.MVC.Factories;
 using Fixxo.MVC.Models.OutputDto;
 using Fixxo.MVC.Services;
 using Fixxo.MVC.ViewModels;
@@ -30,19 +31,21 @@ namespace Fixxo.MVC.Controllers
         {
             var iproductsList = await _displayAllProductsService.GetAsync();
 
+            
+
+            return View(HomeIndexViewModelFactory.Create(iproductsList));
+
             // borde jag skapa en homeindexviewfactory och ha det här i konstruktorn kanske, skicka in iproductslist som parameter. Ja
 
-            var viewModel = GenericFactory.Create<HomeIndexViewModel>(); 
-
-            var productList = _getProductsService.ToProduct(iproductsList);
-            var dtoList = _getProductsService.ToDtoList(productList);
-
-            foreach (var dto in dtoList)
-            {
-                viewModel.ProductsOutputDto.Add(dto);
-            }
-
-            return View(viewModel);
+            // var viewModel = GenericFactory.Create<HomeIndexViewModel>(); 
+            //
+            // var productList = _getProductsService.ToProduct(iproductsList);
+            // var dtoList = _getProductsService.ToDtoList(productList);
+            //
+            // foreach (var dto in dtoList)
+            // {
+            //     viewModel.ProductsOutputDto.Add(dto);
+            // }
         }
     }
 }
