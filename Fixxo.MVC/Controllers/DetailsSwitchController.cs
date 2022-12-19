@@ -6,7 +6,7 @@ namespace Fixxo.MVC.Controllers
     public class DetailsSwitchController : Controller
     {
 
-        // srp sköter switch för vilken details produkt
+        // srp sköter switch för vilken details produkt. Den här switch kan potentiellt bli väldigt lång, så egen controller
 
         private readonly ICatalogItemService _catalogItemService;
 
@@ -20,7 +20,7 @@ namespace Fixxo.MVC.Controllers
         {
             var product = await _catalogItemService.GetAsync(id);
 
-            // inte nöjd över den här lösningen. Nosql utan ef core hade nog varit bra men hinner inte bygga det, så.....
+            // inte nöjd över den här lösningen. Nosql utan ef core hade nog varit bra men hinner inte läsa på och bygga det, så.....
 
             return product.Category switch
             {

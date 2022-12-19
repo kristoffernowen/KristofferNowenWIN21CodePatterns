@@ -4,5 +4,5 @@ namespace Fixxo.Core.Models;
 
 public class Jacket : Product, IJacket
 {
-    public string AvailableSizes { get; set; }
+    public string AvailableSizes { get; set; } = null!;
 }

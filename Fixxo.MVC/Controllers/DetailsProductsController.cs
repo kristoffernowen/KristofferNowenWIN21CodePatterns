@@ -5,7 +5,7 @@ namespace Fixxo.MVC.Controllers
 {
     public class DetailsProductsController : Controller
     {
-        // srp : responsible for view of details product. Many different products, but one action
+        // srp : responsible for view of selected details product. Many different products, but always the same action action. So one controller
 
         private readonly IDisplayProductService _displayProductService;
 
@@ -17,9 +17,9 @@ namespace Fixxo.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Jacket(string id)
         {
-            var _id = new Guid(id);
+            var guidId = new Guid(id);
 
-            var jacket = await _displayProductService.GetJacketAsync(_id);
+            var jacket = await _displayProductService.GetJacketAsync(guidId);
 
             return View(jacket);
         }
@@ -28,9 +28,9 @@ namespace Fixxo.MVC.Controllers
         public async Task<IActionResult> Shoes(string id)
         {
 
-            var _id = new Guid(id);
+            var guidId = new Guid(id);
 
-            var shoes = await _displayProductService.GetShoesAsync(_id);
+            var shoes = await _displayProductService.GetShoesAsync(guidId);
 
             return View(shoes);
         }

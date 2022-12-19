@@ -16,7 +16,9 @@ public static class GetProductOutputDtoExtensions
             Category = model.Category,
             Name = model.Name,
             Price = model.Price,
-            Rating = model.Rating
+            Rating = model.Rating,
+            CatalogItemId = model.CatalogItemId,
+            ImgUrl = model.ImgUrl
         };
     }
 }

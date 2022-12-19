@@ -1,4 +1,5 @@
 ﻿using Fixxo.Core.Models;
+using Fixxo.MVC.Models.OutputDto;
 
 namespace Fixxo.MVC.ViewModels
 {
@@ -6,6 +7,6 @@ namespace Fixxo.MVC.ViewModels
     {
         public List<Jacket> Jackets { get; set; } = new List<Jacket>();
         public List<Shoes> Shoes { get; set; } = new List<Shoes>();
-        public List<Product> Products { get; set; } = new List<Product>();
+        public List<IGetProductOutputDto> ProductsOutputDto { get; set; } = new ();
     }
 }

@@ -10,23 +10,9 @@
             @{
                 if (Model != null)
                 {
-                    @* if (Model.Shoes.Count + Model.Jackets.Count < 5) *@
-                    @* { *@
-                    @*     @foreach (var product in Model.Jackets) *@
-                    @*     { *@
-                    @*     *@
-                    @*         <partial name="ProductPartials/_JacketPartial" model="product"/> *@
-                    @*     } *@
-                    @*     @foreach (var product in Model.Shoes) *@
-                    @*     { *@
-                    @*     *@
-                    @*         <partial name="ProductPartials/_ShoesPartial" model="product"/> *@
-                    @*     } *@
-                    @* } *@
-
-                    if (Model.Products.Count < 5)
+                    if (Model.ProductsOutputDto.Count < 5)
                     {
-                        foreach (var product in Model.Products)
+                        foreach (var product in Model.ProductsOutputDto)
                         {
                             <partial name="ProductPartials/_ProductPartial" model="product"/>
                         }
@@ -35,7 +21,7 @@
                     {
                         for (var i = 0; i < 4; i++)
                         {
-                            <partial name="ProductPartials/_ProductPartial"  model="Model.Products[i]"/>
+                            <partial name="ProductPartials/_ProductPartial"  model="Model.ProductsOutputDto[i]"/>
                         }
                     }
                 }

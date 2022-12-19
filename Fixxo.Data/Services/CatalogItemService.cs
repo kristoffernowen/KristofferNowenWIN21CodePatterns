@@ -1,10 +1,10 @@
-﻿using AutoMapper;
+﻿using System.Diagnostics;
+using AutoMapper;
 using Fixxo.Core.Factories;
 using Fixxo.Core.Interface;
 using Fixxo.Core.Models;
 using Fixxo.Data.Data;
 using Fixxo.Data.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace Fixxo.Data.Services
 {
@@ -20,6 +20,7 @@ namespace Fixxo.Data.Services
         }
         public async Task<CatalogItem> GetAsync(Guid id)
         {
+            Debug.Assert(_context.CatalogItems != null, "_context.CatalogItems != null");
             var item = await _context.CatalogItems.FindAsync(id);
 
             return _mapper.Map<CatalogItem>(item);
@@ -27,6 +28,8 @@ namespace Fixxo.Data.Services
 
         public async Task<Guid> CreateAsync(string category)
         {
+            // använder generic factory för det är så enkelt att peta in category manuellt
+
             var catalogItem
                 = GenericFactory.Create<CatalogItemEntity>();
             catalogItem.Category = category;

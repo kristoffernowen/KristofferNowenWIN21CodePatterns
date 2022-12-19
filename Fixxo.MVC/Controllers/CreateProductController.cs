@@ -6,6 +6,9 @@ namespace Fixxo.MVC.Controllers
 {
     public class CreateProductController : Controller
     {
+        // Mina produkter har en del, så create product får en egen controller
+
+
         private readonly ICreateProductService _createProductService;
 
 

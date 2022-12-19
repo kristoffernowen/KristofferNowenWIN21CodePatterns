@@ -1,8 +1,6 @@
-﻿using Fixxo.Core.Factories;
-using Fixxo.Core.Interface;
+﻿using Fixxo.Core.Interface;
 using Fixxo.Core.Models;
 using Fixxo.Data.Data;
-using Fixxo.Data.Entities;
 using Fixxo.Data.Factories;
 
 namespace Fixxo.Data.Services;
@@ -20,7 +18,9 @@ public class CreateProductService : ICreateProductService
 
     public async Task CreateAsync(Product model)
     {
-        // det här skapar bara, en sak, fast olika klasser, tycker de kan vara i en service - ett syfte. 
+        // srp - det här skapar bara en sak, fast olika klasser, tycker de kan vara i en service - ett syfte. 
+        // isp - interfacet är bara hit
+        // dip - använder factory för att få bort initieringen
 
 
         switch (model.Category)

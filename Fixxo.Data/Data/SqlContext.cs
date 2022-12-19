@@ -9,9 +9,9 @@ namespace Fixxo.Data.Data
         {
         }
 
-        public DbSet<CatalogItemEntity> CatalogItems { get; set; }
-        public DbSet<JacketEntity> Jackets { get; set; }
-        public DbSet<ShoesEntity> Shoes { get; set; }
+        public DbSet<CatalogItemEntity>? CatalogItems { get; set; }
+        public DbSet<JacketEntity>? Jackets { get; set; }
+        public DbSet<ShoesEntity>? Shoes { get; set; }
 
         // Jag ville egentligen ha sparat in ProductEntity och lagt som IProduct på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
         // på Product, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.

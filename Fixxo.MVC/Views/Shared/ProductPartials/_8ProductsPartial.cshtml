@@ -1,33 +1,21 @@
 ﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 <section class="featured-product">
+    <div class="center-grid">
+        <h2 class="pb-3">Featured Products</h2>
+    </div>
     <div class="featured-grid">
 
-       @{
-           if (Model != null)
-           {
-               @* if (Model.Shoes.Count + Model.Jackets.Count < 9) *@
-               @* { *@
-               @*     @foreach (var product in Model.Jackets) *@
-               @*     { *@
-               @*          *@
-               @*         <partial name="ProductPartials/_JacketPartial" model="product"/> *@
-               @*     } *@
-               @*     @foreach (var product in Model.Shoes) *@
-               @*     { *@
-               @*          *@
-               @*         <partial name="ProductPartials/_ShoesPartial" model="product"/> *@
-               @*     } *@
-               @* *@
-               @* } *@
-
-               if (Model.Products.Count < 9)
-               {
-                   foreach (var product in Model.Products)
-                   {
-                       if (Model != null)
-                       {
-                            <partial name="ProductPartials/_ProductPartial" model="product" />
+        @{
+            if (Model != null)
+            {
+                if (Model.ProductsOutputDto.Count < 9)
+                {
+                    foreach (var product in Model.ProductsOutputDto)
+                    {
+                        if (Model != null)
+                        {
+                            <partial name="ProductPartials/_ProductPartial" model="product"/>
                         }
                     }
                 }
@@ -37,12 +25,12 @@
                     {
                         if (Model != null)
                         {
-                            <partial name="ProductPartials/_ProductPartial"  model="Model.Products[i]"/>
+                            <partial name="ProductPartials/_ProductPartial" model="Model.ProductsOutputDto[i]"/>
                         }
                     }
-               }
-           }
-       }
+                }
+            }
+        }
 
     </div>
 </section>

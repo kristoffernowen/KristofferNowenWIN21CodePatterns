@@ -15,7 +15,7 @@ namespace Fixxo.Core.Models
      *
      *          På det sättet får mina arv inga oväntade beteenden. Interface varianten är egentligen enklare men för att ha med ett LSP exempel
      *
-     *  ISP     Varje interface är till en grej/syfte
+     *  ISP     Varje interface är till en grej/syfte, just här till en klass
      */
 
     public class Product : IProduct
@@ -23,9 +23,12 @@ namespace Fixxo.Core.Models
         public string Id { get; set; } = null!;
         public string Category { get; set; } = null!;
         public string Name { get; set; } = null!;
+        
         public int Rating { get; set; }
         public decimal Price { get; set; }
         public Guid CatalogItemId { get; set; }
-        public string ImgUrl { get; set; }
+
+        public string ImgUrl { get; set; } =
+            "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
     }
 }

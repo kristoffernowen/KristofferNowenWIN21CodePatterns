@@ -6,10 +6,10 @@ namespace Fixxo.Data.Entities
     {
         [Key]
         public Guid Id { get; set; } = Guid.NewGuid();
-        public string Category { get; set; }
-        public List<JacketEntity> Jackets { get; set; }
+        public string Category { get; set; } = null!;
+        public List<JacketEntity>? Jackets { get; set; }
 
-        public List<ShoesEntity> Shoes { get; set; }
+        public List<ShoesEntity>? Shoes { get; set; }
 
         // public IProduct Product { get; set; }     Jag förstår inte hur jag ska mappa navigeringen
         // NoSql hade varit skönt, men med ef core fick jag samma problem. ren nosql i json object som document, men jag hinner nog inte fixa in det i den här uppgiften

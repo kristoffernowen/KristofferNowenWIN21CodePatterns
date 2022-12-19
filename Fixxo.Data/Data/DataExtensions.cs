@@ -8,12 +8,14 @@ namespace Fixxo.Data.Data
 {
     public static class DataExtensions
     {
+        // Lägger till mina services i dependency containern, olika services men har som enda syfte att göra de tillgängliga i MVC projektets programfil, så jag tycker det blir en.
         public static IServiceCollection AddData(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<SqlContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Sql")));
             services.AddScoped<IDisplayProductService, DisplayProductService>();
+            services.AddScoped<IDisplayAllProductsService, DisplayAllProductsService>();
             services.AddScoped<ICatalogItemService, CatalogItemService>();
             services.AddScoped<ICreateProductService, CreateProductService>();
 
