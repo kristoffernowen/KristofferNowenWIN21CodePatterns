@@ -1,6 +1,7 @@
 ﻿using Fixxo.Core.Factories;
 using Microsoft.AspNetCore.Mvc;
 using Fixxo.Core.Interface;
+using Fixxo.Core.Interface.Models;
 using Fixxo.Core.Models;
 using Fixxo.MVC.Factories;
 using Fixxo.MVC.Models.OutputDto;
@@ -29,11 +30,16 @@ namespace Fixxo.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var iproductsList = await _displayAllProductsService.GetAsync();
+            // var iproductsList = await _displayAllProductsService.GetAsync();
+            var viewModel = GenericFactory.Create<HomeIndexViewModel>();
 
-            
+            var products = _getProductsService.ToProduct(await _displayAllProductsService.GetAsync());
 
-            return View(HomeIndexViewModelFactory.Create(iproductsList));
+            viewModel.ProductsOutputDto= _getProductsService.ToDtoList(products);
+
+            return View(viewModel);
+
+            // return View(HomeIndexViewModelFactory.Create(iproductsList));
 
             // borde jag skapa en homeindexviewfactory och ha det här i konstruktorn kanske, skicka in iproductslist som parameter. Ja
 

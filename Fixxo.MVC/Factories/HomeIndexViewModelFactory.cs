@@ -7,10 +7,11 @@ namespace Fixxo.MVC.Factories
 {
     public static class HomeIndexViewModelFactory
     {
-        // Ska logiken vara här eller i controllern? båda verkar sådär, men den används bara en gång så logiken får vara här så har jag städat undan den från controllern.
+        // Ska logiken vara här eller i en service i controllern? båda verkar sådär, men den används bara en gång så logiken får vara här så har jag städat undan den från controllern.
+        // var outputDtos kunde kanske brytas ner, men det känns överdrivet
         public static HomeIndexViewModel Create(List<IProduct> iProducts)
         {
-            var outputDtos = iProducts.Select(x => x as Product).ToList().Select(product => product.ToDto()).ToList();
+            var outputDtos = iProducts.Select(iProduct => iProduct as Product).Select(product => product.ToDto()).ToList();
 
             var model = new HomeIndexViewModel();
 
