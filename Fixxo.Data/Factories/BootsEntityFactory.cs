@@ -2,11 +2,11 @@
 
 namespace Fixxo.Data.Factories;
 
-public static class ShoesEntityFactory
+public static class BootsEntityFactory
 {
-    public static ShoesEntity Create(string category, string name, int rating, decimal price, string imgUrl)
+    public static BootsEntity Create(string category, string name, int rating, decimal price, string imgUrl)
     {
-        return new ShoesEntity()
+        return new BootsEntity
         {
             Category = category,
             Name = name,

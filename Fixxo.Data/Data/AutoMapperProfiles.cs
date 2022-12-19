@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Fixxo.Core.Models;
 using Fixxo.Data.Entities;
+using Fixxo.Data.Entities.ShoesEntities;
 
 namespace Fixxo.Data.Data
 {

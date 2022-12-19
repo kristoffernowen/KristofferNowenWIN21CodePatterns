@@ -1,4 +1,6 @@
-﻿namespace Fixxo.Data.Entities
+﻿using Fixxo.Data.Interfaces.Entities.ShoeEntities;
+
+namespace Fixxo.Data.Entities.ShoesEntities
 {
     public class HighHeelsEntity : IHighHeelsEntity
     {

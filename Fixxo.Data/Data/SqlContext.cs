@@ -1,4 +1,5 @@
 ﻿using Fixxo.Data.Entities;
+using Fixxo.Data.Entities.ShoesEntities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fixxo.Data.Data

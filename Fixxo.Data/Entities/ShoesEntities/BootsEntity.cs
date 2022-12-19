@@ -1,6 +1,7 @@
 ﻿using Fixxo.Core.Models.Enums;
+using Fixxo.Data.Interfaces.Entities.ShoeEntities;
 
-namespace Fixxo.Data.Entities
+namespace Fixxo.Data.Entities.ShoesEntities
 {
     public class BootsEntity : IBootsEntity
     {

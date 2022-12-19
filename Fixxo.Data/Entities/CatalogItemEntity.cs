@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Fixxo.Data.Entities.ShoesEntities;
 using Fixxo.Data.Interfaces.Entities;
 
 namespace Fixxo.Data.Entities

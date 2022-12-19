@@ -1,4 +1,5 @@
 ﻿using Fixxo.Data.Entities;
+using Fixxo.Data.Entities.ShoesEntities;
 
 namespace Fixxo.Data.Interfaces.Entities;
 

@@ -22,6 +22,8 @@ public class CreateProductService : ICreateProductService
         // isp - interfacet är bara hit
         // dip - använder factory för att få bort initieringen
 
+        // inte så dry men jag har inte lärt mig dynamiskt och generiskt så bra...
+
 
         switch (model.Category)
         {
@@ -42,6 +44,26 @@ public class CreateProductService : ICreateProductService
                 shoesEntity.CatalogItemId = shoesId;
 
                 _context.Shoes.Add(shoesEntity);
+                await _context.SaveChangesAsync();
+                break;
+
+            case "Boots":
+                var bootsId = await _catalogItemService.CreateAsync(model.Category);
+
+                var bootsEntity = BootsEntityFactory.Create(model.Category, model.Name, model.Rating, model.Price,
+                    model.ImgUrl);
+                bootsEntity.CatalogItemId = bootsId;
+
+                _context.Boots.Add(bootsEntity);
+                await _context.SaveChangesAsync();
+                break;
+
+            case "HighHeels":
+                var highHeelsId = await _catalogItemService.CreateAsync(model.Category);
+                var highHeelsEntity = HighHeelsEntityFactory.Create(model.Category, model.Name, model.Rating,
+                    model.Price,
+                    model.ImgUrl);
+                _context.HighHeels.Add(highHeelsEntity);
                 await _context.SaveChangesAsync();
                 break;
         }
