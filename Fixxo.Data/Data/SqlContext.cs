@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fixxo.Data.Entities;
+﻿using Fixxo.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fixxo.Data.Data
@@ -17,6 +12,9 @@ namespace Fixxo.Data.Data
         public DbSet<CatalogItemEntity> CatalogItems { get; set; }
         public DbSet<JacketEntity> Jackets { get; set; }
         public DbSet<ShoesEntity> Shoes { get; set; }
+
+        // Jag ville egentligen ha sparat in ProductEntity och lagt som IProduct på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
+        // på Product, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
