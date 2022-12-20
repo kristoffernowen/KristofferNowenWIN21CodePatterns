@@ -7,13 +7,15 @@
         <h2 class="pb-3">Featured Products</h2>
     </div>
     <div class="featured-grid">
+        
+        
 
         @{
             if (Model != null)
             {
-                if (Model.ProductsOutputDto.Count < 9)
+                if (Model.Jackets.Count + Model.Shoes.Count + Model.Boots.Count + Model.HighHeels.Count < 9)
                 {
-                    foreach (var product in Model.ProductsOutputDto)
+                    foreach (var product in Model.GetDtos)
                     {
                         if (Model != null)
                         {
@@ -29,8 +31,29 @@
                             @* if(Model is HighHeels) *@
                             @*     <partial name="_HighHeelsPartial" model="product"/> *@
 
-                            <partial name="ProductPartials/_ProductPartial" model="product"/>
+                            @* <partial name="ProductPartials/_ProductPartial" model="product"/> *@
                         }
+                    }
+
+                    foreach (var jacket in Model.Jackets)
+                    {
+                        <partial name="ProductPartials/_JacketPartial" model="jacket" />
+                    }
+
+                    foreach (var shoes in Model.Shoes)
+                    {
+                        <partial name="ProductPartials/_ShoesPartial" model="shoes"/>
+                    }
+
+
+                    foreach (var boots in Model.Boots)
+                    {
+                        <partial name="ProductPartials/_BootsPartial" model="boots"/>
+                    }
+
+                    foreach (var highHeels in Model.HighHeels)
+                    {
+                        <partial name="ProductPartials/_HighHeelsPartial" model="highHeels" />
                     }
                 }
                 else
@@ -52,7 +75,28 @@
                             @*     <partial name="_HighHeelsPartial" model="Model.GetDtos[i]" /> *@
 
 
-                            <partial name="ProductPartials/_ProductPartial" model="Model.ProductsOutputDto[i]"/>
+                            @* <partial name="ProductPartials/_ProductPartial" model="Model.GetDtos[i]"/> *@
+
+                            foreach (var jacket in Model.Jackets)
+                            {
+                                                        <partial name="ProductPartials/_JacketPartial" model="jacket"/>
+                            }
+
+                            foreach (var shoes in Model.Shoes)
+                            {
+                                <partial name="ProductPartials/_ShoesPartial" model="shoes" />
+                            }
+
+
+                            foreach (var boots in Model.Boots)
+                            {
+                                <partial name="ProductPartials/_BootsPartial" model="boots" />
+                            }
+
+                            foreach (var highHeels in Model.HighHeels)
+                            {
+                                <partial name="ProductPartials/_HighHeelsPartial" model="highHeels" />
+                            }
                         }
                     }
                 }

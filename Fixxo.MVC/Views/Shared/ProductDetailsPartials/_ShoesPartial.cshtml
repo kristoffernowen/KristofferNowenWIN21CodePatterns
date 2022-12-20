@@ -1,0 +1,47 @@
+﻿@model Fixxo.MVC.Models.OutputDto.ShoesDto.GetShoesOutputDto
+
+<div class="shoes-grid featured-product details">
+    <div class="item1 img-container">
+        <img src="@Model.ImgUrl"/>
+    </div>
+    <div class="item2">
+        <h3>@Model.Name</h3>
+        <p>@Model.Category</p>
+        <p>Max size: @Model.MaxSize</p>
+        <p>Rating : @Model.Rating</p>
+        <div>
+            @for (var i = Model.Rating; i > 0; i--)
+            {
+                
+                
+                <i class="fa-solid fa-star"></i>
+                
+            }
+        </div>
+    </div>
+    <div class="item3">
+        <h3>Description</h3>
+        <p>Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes Awesome shoes
+            Awesome shoes Awesome shoes Awesome shoes Awesome shoesAwesome shoes Awesome shoes Awesome shoes Awesome shoesAwesome shoesAwesome shoesAwesome shoesAwesome shoes
+            Awesome shoes Awesome shoesAwesome shoes Awesome shoesAwesome shoes
+        </p>
+    </div>
+    <div class="item5 img-container">
+        <img src="@Model.ImgUrl" />
+    </div>
+    <div class="item4">
+        <h3>@Model.Name</h3>
+        <p>@Model.Category</p>
+        <p>Max size: @Model.MaxSize</p>
+        <p>Rating : @Model.Rating</p>
+        <div>
+            @for (var i = Model.Rating; i > 0; i--)
+            {
+
+
+                    <i class="fa-solid fa-star"></i>
+
+            }
+        </div>
+    </div>
+</div>

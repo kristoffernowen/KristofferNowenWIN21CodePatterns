@@ -12,29 +12,59 @@
             @{
                 if (Model != null)
                 {
-                    if (Model.ProductsOutputDto.Count < 5)
+                    if (Model.Jackets.Count + Model.Shoes.Count + Model.Boots.Count + Model.HighHeels.Count < 5)
                     {
-                        foreach (var product in Model.ProductsOutputDto)
-                        {
-                            @* if(Model is Jacket) *@
-                            @*     <partial name="_JacketPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is Shoes) *@
-                            @*     <partial name="_ShoesPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is Boots) *@
-                            @*     <partial name="_BootsPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is HighHeels) *@
-                            @*     <partial name="_HighHeelsPartial" model="product"/> *@
+                        @* foreach (var product in Model.GetDtos) *@
+                        @* { *@
+                        @*     if(Model is Jacket) *@
+                        @*         <partial name="_JacketPartial" model="product"/> *@
+                        @*      *@
+                        @*     if(Model is Shoes) *@
+                        @*         <partial name="_ShoesPartial" model="product"/> *@
+                        @*      *@
+                        @*     if(Model is Boots) *@
+                        @*         <partial name="_BootsPartial" model="product"/> *@
+                        @*      *@
+                        @*     if(Model is HighHeels) *@
+                        @*         <partial name="_HighHeelsPartial" model="product"/> *@
+                        @* *@
+                        @*     <partial name="ProductPartials/_ProductPartial" model="product"/> *@
+                        @* *@
+                        @*      *@
+                        @* } *@
 
-                            <partial name="ProductPartials/_ProductPartial" model="product"/>
+                        foreach (var jacket in Model.Jackets)
+                        {
+                            <partial name="ProductPartials/_JacketPartial" model="jacket" />
+                        }
+
+                        foreach (var shoes in Model.Shoes)
+                        {
+                            <partial name="ProductPartials/_ShoesPartial" model="shoes"/>
+                        }
+
+
+                        foreach (var boots in Model.Boots)
+                        {
+                            <partial name="ProductPartials/_BootsPartial" model="boots"/>
+                        }
+
+                        foreach (var highHeels in Model.HighHeels)
+                        {
+                            <partial name="ProductPartials/_HighHeelsPartial" model="highHeels" />
                         }
                     }
                     else
                     {
                         for (var i = 0; i < 4; i++)
                         {
+                            if (Model.Jackets != null)
+                            {
+
+                            }
+
+
+
                             @* if(Model is Jacket) *@
                             @*     <partial name="_JacketPartial" model="Model.GetDtos[i]"/> *@
                             @* *@
@@ -48,7 +78,42 @@
                             @*     <partial name="_HighHeelsPartial" model="Model.GetDtos[i]" /> *@
 
 
-                            <partial name="ProductPartials/_ProductPartial" model="Model.ProductsOutputDto[i]"/>
+                            @* <partial name="ProductPartials/_ProductPartial" model="Model.GetDtos[i]"/> *@
+
+
+                            foreach (var jacket in Model.Jackets)
+                            {
+                                if (i >= 4)
+                                    break;
+                                <partial name="ProductPartials/_JacketPartial" model="jacket" />
+                                i++;
+                                
+                            }
+
+                            foreach (var shoes in Model.Shoes)
+                            {
+                                if (i >= 4)
+                                    break;
+                                <partial name="ProductPartials/_ShoesPartial" model="shoes" />
+                                i++;
+                            }
+
+
+                            foreach (var boots in Model.Boots)
+                            {
+                                if (i >= 4)
+                                    break;
+                                <partial name="ProductPartials/_BootsPartial" model="boots" />
+                                i++;
+                            }
+
+                            foreach (var highHeels in Model.HighHeels)
+                            {
+                                if (i >= 4)
+                                    break;
+                                <partial name="ProductPartials/_HighHeelsPartial" model="highHeels"/>
+                                i++;
+                            }
                         }
                     }
                 }

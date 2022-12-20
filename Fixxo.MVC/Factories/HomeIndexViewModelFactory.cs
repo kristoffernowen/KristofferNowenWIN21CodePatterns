@@ -16,52 +16,52 @@ namespace Fixxo.MVC.Factories
 
         public static HomeIndexViewModel Create(List<IProductInCatalog> iProductInCatalog)
         {
-            var outputDtos = iProductInCatalog.Select(inCatalog => inCatalog as Product).Select(product => product.ToDto()).ToList();
-            
-            var model = new HomeIndexViewModel();
-            
-            foreach (var dto in outputDtos)
-            {
-                model.ProductsOutputDto.Add(dto);
-            }
-            
-            return model;          //  This worked when Boots and HighHeels models inherited Product
-
-
-
-            // var viewModel = new HomeIndexViewModel();
-            // // var modelList = new List<IProductInCatalog>();
+            // var outputDtos = iProductInCatalog.Select(inCatalog => inCatalog as Product).Select(product => product.ToDto()).ToList();
             //
-            // foreach (var productInCatalog in iProductInCatalog)
+            // var model = new HomeIndexViewModel();
+            //
+            // foreach (var dto in outputDtos)
             // {
-            //     if (productInCatalog is Jacket jacket)
-            //     {
-            //         jacket = (jacket as Jacket);
-            //         viewModel.GetDtos.Add(jacket.ToDto());
-            //     }
-            //
-            //
-            //     if (productInCatalog is Shoes shoes)
-            //     {
-            //         shoes = (shoes as Shoes);
-            //         viewModel.GetDtos.Add(shoes.ToDto());
-            //     }
-            //
-            //     if (productInCatalog is Boots boots)
-            //     {
-            //         boots = (boots as Boots);
-            //         viewModel.GetDtos.Add(boots.ToDto());
-            //     }
-            //
-            //     if (productInCatalog is HighHeels heels)
-            //     {
-            //         heels = (heels as HighHeels);
-            //         viewModel.GetDtos.Add(heels.ToDto());
-            //     }
+            //     model.ProductsOutputDto.Add(dto);
             // }
             //
-            //
-            // return viewModel;
+            // return model;          //  This worked when Boots and HighHeels models inherited Product
+
+
+
+            var viewModel = new HomeIndexViewModel();
+            // var modelList = new List<IProductInCatalog>();
+            
+            foreach (var productInCatalog in iProductInCatalog)
+            {
+                if (productInCatalog is Jacket jacket)
+                {
+                    jacket = (jacket as Jacket);
+                    viewModel.Jackets.Add(jacket.ToDto());
+                }
+            
+            
+                if (productInCatalog is Shoes shoes)
+                {
+                    shoes = (shoes as Shoes);
+                    viewModel.Shoes.Add(shoes.ToDto());
+                }
+            
+                if (productInCatalog is Boots boots)
+                {
+                    boots = (boots as Boots);
+                    viewModel.Boots.Add(boots.ToDto());
+                }
+            
+                if (productInCatalog is HighHeels heels)
+                {
+                    heels = (heels as HighHeels);
+                    viewModel.HighHeels.Add(heels.ToDto());
+                }
+            }
+            
+            
+            return viewModel;              // Såg bra ut här inne, men blev problem i vyerna. Nu fungerar den lite grann sm jag vill
 
         }
     }

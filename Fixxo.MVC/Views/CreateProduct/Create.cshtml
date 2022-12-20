@@ -5,7 +5,13 @@
 <form asp-action="Create" class="col-4 offset-4">
     <div>
         <p>Put product Category</p>
-        <input id="create-roleName" asp-for="Category" class="container-fluid" placeholder="Category" />
+        <input id="create-roleName" asp-for="Category" type="" class="container-fluid" placeholder="Category" />
+        
+
+        @* https://asp.mvc-tutorial.com/tag-helpers/the-select-tag-helper/    försök spana in det hä om du hinnetr*@
+        
+        
+        
 
     </div>
     <div>
@@ -23,6 +29,10 @@
     <div>
         <p>Put product price</p>
         <input asp-for="ImgUrl" id="imgUrl" type="text" placeholder="Image Url" />
+        <p>Use this maybe: https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1</p>
+    </div>
+    <div>
+        <p>Some additional values are added hardcoded</p>
     </div>
 
     <div class="d-flex  flex-column">
