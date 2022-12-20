@@ -1,8 +1,10 @@
-﻿using Fixxo.MVC.Interfaces.Models.OutputDto;
+﻿using Fixxo.MVC.Interfaces;
+using Fixxo.MVC.Interfaces.Models.OutputDto;
 
 namespace Fixxo.MVC.Models.OutputDto.ShoesDto;
 
-public class GetHighHeelsOutputDto : IGetShoesOutputDto, IGetHighHeelsOutputDto
+// Bygger vidare genom att förlänga med interface så jag inte behöver ändra GetShoesOutputDto enligt ocp.
+public class GetHighHeelsOutputDto : IGetShoesOutputDto, IGetHighHeelsOutputDto, IGetDto
 {
     public int HeightOfHeels { get; set; }
     public int MaxSize { get; set; } = 42;

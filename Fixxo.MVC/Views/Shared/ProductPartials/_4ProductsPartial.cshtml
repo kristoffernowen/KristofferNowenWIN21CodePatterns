@@ -1,4 +1,6 @@
-﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
+﻿@using Fixxo.Core.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 <div class="four-products-h-grid">    
     <div class="grey-box-50 me-2 grid-item-1">
@@ -14,6 +16,18 @@
                     {
                         foreach (var product in Model.ProductsOutputDto)
                         {
+                            @* if(Model is Jacket) *@
+                            @*     <partial name="_JacketPartial" model="product"/> *@
+                            @* *@
+                            @* if(Model is Shoes) *@
+                            @*     <partial name="_ShoesPartial" model="product"/> *@
+                            @* *@
+                            @* if(Model is Boots) *@
+                            @*     <partial name="_BootsPartial" model="product"/> *@
+                            @* *@
+                            @* if(Model is HighHeels) *@
+                            @*     <partial name="_HighHeelsPartial" model="product"/> *@
+
                             <partial name="ProductPartials/_ProductPartial" model="product"/>
                         }
                     }
@@ -21,7 +35,20 @@
                     {
                         for (var i = 0; i < 4; i++)
                         {
-                            <partial name="ProductPartials/_ProductPartial"  model="Model.ProductsOutputDto[i]"/>
+                            @* if(Model is Jacket) *@
+                            @*     <partial name="_JacketPartial" model="Model.GetDtos[i]"/> *@
+                            @* *@
+                            @* if(Model is Shoes) *@
+                            @*     <partial name="_ShoesPartial" model="Model.GetDtos[i]"/> *@
+                            @* *@
+                            @* if(Model is Boots) *@
+                            @*     <partial name="_BootsPartial" model="Model.GetDtos[i]"/> *@
+                            @* *@
+                            @* if(Model is HighHeels) *@
+                            @*     <partial name="_HighHeelsPartial" model="Model.GetDtos[i]" /> *@
+
+
+                            <partial name="ProductPartials/_ProductPartial" model="Model.ProductsOutputDto[i]"/>
                         }
                     }
                 }

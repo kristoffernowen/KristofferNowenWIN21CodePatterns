@@ -1,4 +1,4 @@
-﻿namespace Fixxo.MVC.Models.OutputDto.ShoesDto;
+﻿namespace Fixxo.MVC.Interfaces.Models.OutputDto;
 
 public interface IGetHighHeelsOutputDto
 {

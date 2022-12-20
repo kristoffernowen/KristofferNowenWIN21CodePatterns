@@ -1,8 +1,6 @@
-﻿using Fixxo.MVC.Interfaces.Models.OutputDto;
+﻿namespace Fixxo.MVC.Interfaces.Models.OutputDto;
 
-namespace Fixxo.MVC.Models.OutputDto.ShoesDto;
-
-public interface IGetBootsOutputDto : IGetShoesOutputDto
+public interface IGetBootsOutputDto
 {
     int MaxSize { get; set; }
     string Id { get; set; }
@@ -12,6 +10,6 @@ public interface IGetBootsOutputDto : IGetShoesOutputDto
     decimal Price { get; set; }
     Guid CatalogItemId { get; set; }
     string ImgUrl { get; set; }
-    bool isKneeHigh { get; set; }
+    bool IsKneeHigh { get; set; }
     string Season { get; set; }
 }
