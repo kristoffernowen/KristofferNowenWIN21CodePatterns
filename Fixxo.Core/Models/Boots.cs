@@ -3,7 +3,7 @@ using Fixxo.Core.Models.Enums;
 
 namespace Fixxo.Core.Models
 {
-    public class Boots : ProductInCatalog, IBoots, IProductInCatalog
+    public class Boots : Product, IBoots, IProductInCatalog
     {
         // public string Category { get; set; } = null!;
         // public string Name { get; set; } = null!;

@@ -13,7 +13,7 @@ namespace Fixxo.Data.Entities
 
         public List<ShoesEntity>? Shoes { get; set; }
 
-        // public IProductInCatalog ProductInCatalog { get; set; }     Jag förstår inte hur jag ska mappa navigeringen
+        // public IProductInCatalog Product { get; set; }     Jag förstår inte hur jag ska mappa navigeringen
         // NoSql hade varit skönt, men med ef core fick jag samma problem. ren nosql i json object som document, men jag hinner nog inte fixa in det i den här uppgiften
     }
 }

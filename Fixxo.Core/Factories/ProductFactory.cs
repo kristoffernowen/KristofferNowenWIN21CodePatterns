@@ -4,9 +4,9 @@ namespace Fixxo.Core.Factories
 {
     public static class ProductFactory
     {
-        public static ProductInCatalog CreateProduct(string category, string name, decimal price, int rating, string imgUrl)
+        public static Product CreateProduct(string category, string name, decimal price, int rating, string imgUrl)
         {
-            return new ProductInCatalog
+            return new Product
             {
                 Category = category,
                 Name = name,

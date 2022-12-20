@@ -9,7 +9,7 @@ namespace Fixxo.Data.Data
     {
         public AutoMapperProfiles()
         {
-            CreateMap<ProductInCatalog, ProductEntity>().ReverseMap();
+            CreateMap<Product, ProductEntity>().ReverseMap();
             CreateMap<Jacket, JacketEntity>().ReverseMap();
             CreateMap<Shoes, ShoesEntity>().ReverseMap();
             CreateMap<Boots, BootsEntity>().ReverseMap();

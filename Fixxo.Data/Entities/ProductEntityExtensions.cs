@@ -4,9 +4,9 @@
 //
 // public static class ProductEntityExtensions
 // {
-//     public static ProductInCatalog ToModel(this ProductEntity entity)
+//     public static Product ToModel(this ProductEntity entity)
 //     {
-//         return new ProductInCatalog()
+//         return new Product()
 //         {
 //             Category = entity.Category,
 //             Name = entity.Name,

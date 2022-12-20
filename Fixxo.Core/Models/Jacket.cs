@@ -2,7 +2,7 @@
 
 namespace Fixxo.Core.Models;
 
-public class Jacket : ProductInCatalog, IJacket
+public class Jacket : Product, IJacket
 {
     public string AvailableSizes { get; set; } = null!;
 }

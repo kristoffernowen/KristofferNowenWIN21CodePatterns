@@ -10,5 +10,5 @@ public interface IDisplayAllProductsService
     public Task<List<IProductInCatalog>> GetAsync();
 
     // denna har bara existens berättigande så länge get ser ut så här, så därför tycker jag de kan vara tillsammans, de måste ändras tillsammans
-    public List<ProductInCatalog> ToProduct(List<IProductInCatalog> iProducts);
+    public List<Product> ToProduct(List<IProductInCatalog> iProducts);
 }

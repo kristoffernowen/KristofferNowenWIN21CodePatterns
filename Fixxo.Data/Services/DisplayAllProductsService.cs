@@ -45,15 +45,15 @@ namespace Fixxo.Data.Services
                 }
             }
 
-            // var productsCasted = products.Select(product => (product) as ProductInCatalog).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
+            // var productsCasted = products.Select(product => (product) as Product).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
 
             return products;
 
         }
 
-        public List<ProductInCatalog> ToProduct(List<IProductInCatalog> iProducts)
+        public List<Product> ToProduct(List<IProductInCatalog> iProducts)
         {
-            var products = iProducts.Select(x => x as ProductInCatalog).ToList();
+            var products = iProducts.Select(x => x as Product).ToList();
             return products!;
         }
     }

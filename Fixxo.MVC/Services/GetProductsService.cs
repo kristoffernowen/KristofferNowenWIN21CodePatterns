@@ -6,13 +6,13 @@ namespace Fixxo.MVC.Services
 {
     public class GetProductsService
     {
-        public List<ProductInCatalog> ToProduct(List<IProductInCatalog> iProducts)
+        public List<Product> ToProduct(List<IProductInCatalog> iProducts)
         {
-            var products = iProducts.Select(x => x as ProductInCatalog).ToList();
+            var products = iProducts.Select(x => x as Product).ToList();
             return products!;
         }
 
-        public List<GetProductOutputDto> ToDtoList(List<ProductInCatalog> products)
+        public List<GetProductOutputDto> ToDtoList(List<Product> products)
         {
             return products.Select(product => product.ToDto()).ToList();
         }

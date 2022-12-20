@@ -18,7 +18,7 @@ namespace Fixxo.Data.Data
 
 
         // Jag ville egentligen ha sparat in ProductEntity och lagt som IProductInCatalog på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
-        // på ProductInCatalog, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
+        // på Product, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
