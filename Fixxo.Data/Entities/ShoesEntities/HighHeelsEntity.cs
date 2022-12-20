@@ -2,7 +2,7 @@
 
 namespace Fixxo.Data.Entities.ShoesEntities
 {
-    public class HighHeelsEntity : IHighHeelsEntity
+    public class HighHeelsEntity : IHighHeelsEntity, IShoesEntity
     {
         public int MaxSize { get; set; }
         public int MinSize { get; set; }
@@ -13,7 +13,7 @@ namespace Fixxo.Data.Entities.ShoesEntities
         public string Name { get; set; } = null!;
         public int Rating { get; set; }
         public decimal Price { get; set; }
-        public string ImgUrl { get; set; } = null!;
+        public string? ImgUrl { get; set; } = null!;
         public int HeightOfHeels { get; set; } = 7;
     }
 }

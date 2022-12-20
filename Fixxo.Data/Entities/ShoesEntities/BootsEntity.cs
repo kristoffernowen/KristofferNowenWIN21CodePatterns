@@ -3,7 +3,7 @@ using Fixxo.Data.Interfaces.Entities.ShoeEntities;
 
 namespace Fixxo.Data.Entities.ShoesEntities
 {
-    public class BootsEntity : IBootsEntity
+    public class BootsEntity : IBootsEntity, IShoesEntity
     {
         public int MaxSize { get; set; }
         public int MinSize { get; set; }
@@ -14,7 +14,7 @@ namespace Fixxo.Data.Entities.ShoesEntities
         public string Name { get; set; } = null!;
         public int Rating { get; set; }
         public decimal Price { get; set; }
-        public string ImgUrl { get; set; } = null!;
+        public string? ImgUrl { get; set; } = null!;
         public bool IsKneeHigh { get; set; } = true;
         public Season Season { get; set; } = Season.Winter;
     }

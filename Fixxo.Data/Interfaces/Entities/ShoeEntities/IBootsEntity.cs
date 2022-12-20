@@ -3,7 +3,7 @@ using Fixxo.Data.Entities;
 
 namespace Fixxo.Data.Interfaces.Entities.ShoeEntities;
 
-public interface IBootsEntity
+public interface IBootsEntity 
 {
     int MaxSize { get; set; }
     int MinSize { get; set; }
@@ -14,7 +14,7 @@ public interface IBootsEntity
     string Name { get; set; }
     int Rating { get; set; }
     decimal Price { get; set; }
-    string ImgUrl { get; set; }
+    string? ImgUrl { get; set; }
     bool IsKneeHigh { get; set; }
     Season Season { get; set; }
 }
