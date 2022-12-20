@@ -23,7 +23,13 @@ public static class GetProductOutputDtoExtensions
                 ImgUrl = model.ImgUrl
             };
         }
-
-        return new GetProductOutputDto();
+        
+        return new GetProductOutputDto
+        {
+            Category = "I am not a product",
+            Name = "I should not be here",
+            Rating = 1,
+            Price = 0
+        };
     }
 }

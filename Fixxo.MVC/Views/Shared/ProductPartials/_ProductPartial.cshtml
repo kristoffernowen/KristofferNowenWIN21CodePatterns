@@ -3,8 +3,16 @@
 <div class="featured-box">
     <div class="featured-square">
         <div class="img-container">
-            <img class="img" src="@Model.ImgUrl" alt="image" />
-
+        @{
+            if (Model.ImgUrl != null)
+            {
+                    <img class="img" src="@Model.ImgUrl" alt="image"/>
+            }
+            else
+            {
+                    <img class="img" src="/images/pexels-deden-dicky-ramdhani-5755160.jpg" alt="image"/>
+            }
+        }
         </div>
         <div class="quick-view-icons">
             <div class="icon-circle">

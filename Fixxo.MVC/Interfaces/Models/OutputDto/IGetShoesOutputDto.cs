@@ -3,6 +3,7 @@
 public interface IGetShoesOutputDto
 {
     public int MaxSize { get; set; }
+    public int MinSize { get; set; }
     public string Id { get; set; }
     public string Category { get; set; }
     public string Name { get; set; }

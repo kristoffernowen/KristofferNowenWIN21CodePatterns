@@ -4,6 +4,6 @@ namespace Fixxo.MVC.Models.OutputDto
 {
     public class GetJacketOutputDto : GetProductOutputDto, IGetJacketOutputDto
     {
-        public string AvailableSizes { get; set; } = null!;
+        public string AvailableSizes { get; set; } = "S, M, L";
     }
 }
