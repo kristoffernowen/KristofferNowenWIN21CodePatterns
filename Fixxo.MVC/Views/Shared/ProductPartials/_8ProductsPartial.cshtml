@@ -1,6 +1,4 @@
-﻿@using Fixxo.Core.Models
-@using Fixxo.MVC.Models.OutputDto
-@model Fixxo.MVC.ViewModels.HomeIndexViewModel
+﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 <section class="featured-product">
     <div class="center-grid">
@@ -15,25 +13,6 @@
             {
                 if (Model.Jackets.Count + Model.Shoes.Count + Model.Boots.Count + Model.HighHeels.Count < 9)
                 {
-                    foreach (var product in Model.GetDtos)
-                    {
-                        if (Model != null)
-                        {
-                            @* if(Model is Jacket) *@
-                            @*     <partial name="_JacketPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is Shoes) *@
-                            @*     <partial name="_ShoesPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is Boots) *@
-                            @*     <partial name="_BootsPartial" model="product"/> *@
-                            @* *@
-                            @* if(Model is HighHeels) *@
-                            @*     <partial name="_HighHeelsPartial" model="product"/> *@
-
-                            @* <partial name="ProductPartials/_ProductPartial" model="product"/> *@
-                        }
-                    }
 
                     foreach (var jacket in Model.Jackets)
                     {
@@ -62,40 +41,37 @@
                     {
                         if (Model != null)
                         {
-                            @* if(Model is Jacket) *@
-                            @*     <partial name="_JacketPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is Shoes) *@
-                            @*     <partial name="_ShoesPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is Boots) *@
-                            @*     <partial name="_BootsPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is HighHeels) *@
-                            @*     <partial name="_HighHeelsPartial" model="Model.GetDtos[i]" /> *@
-
-
-                            @* <partial name="ProductPartials/_ProductPartial" model="Model.GetDtos[i]"/> *@
-
                             foreach (var jacket in Model.Jackets)
                             {
-                                                        <partial name="ProductPartials/_JacketPartial" model="jacket"/>
+                                if (i >= 8)
+                                    break;
+                                <partial name="ProductPartials/_JacketPartial" model="jacket"/>
+                                i++;
                             }
 
                             foreach (var shoes in Model.Shoes)
                             {
+                                if (i >= 8)
+                                    break;
                                 <partial name="ProductPartials/_ShoesPartial" model="shoes" />
+                                i++;
                             }
 
 
                             foreach (var boots in Model.Boots)
                             {
+                                if (i >= 8)
+                                    break;
                                 <partial name="ProductPartials/_BootsPartial" model="boots" />
+                                i++;
                             }
 
                             foreach (var highHeels in Model.HighHeels)
                             {
+                                if (i >= 8)
+                                    break;
                                 <partial name="ProductPartials/_HighHeelsPartial" model="highHeels" />
+                                i++;
                             }
                         }
                     }

@@ -8,6 +8,6 @@ namespace Fixxo.MVC.Models.InputDto
         public string Name { get; set; } = null!;
         public int Rating { get; set; }
         public decimal Price { get; set; }
-        public string ImgUrl { get; set; } = "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+        public string? ImgUrl { get; set; } 
     }
 }

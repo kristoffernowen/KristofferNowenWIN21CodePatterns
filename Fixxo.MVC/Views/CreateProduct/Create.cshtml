@@ -2,17 +2,17 @@
 
 <partial name="_NavbarPartial" />
 
+
 <form asp-action="Create" class="col-4 offset-4">
     <div>
-        <p>Put product Category</p>
-        <input id="create-roleName" asp-for="Category" type="" class="container-fluid" placeholder="Category" />
+        <p>Choose product Category</p>
         
-
-        @* https://asp.mvc-tutorial.com/tag-helpers/the-select-tag-helper/    försök spana in det hä om du hinnetr*@
-        
-        
-        
-
+        <select asp-for="Category">
+            <option value="Jacket">Jacket</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Boots">Boots</option>
+            <option value="High heels">High heels</option>
+        </select>
     </div>
     <div>
         <p>Put product name</p>
@@ -29,7 +29,7 @@
     <div>
         <p>Put product price</p>
         <input asp-for="ImgUrl" id="imgUrl" type="text" placeholder="Image Url" />
-        <p>Use this maybe: https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1</p>
+        <p>Will have a default image if blank</p>
     </div>
     <div>
         <p>Some additional values are added hardcoded</p>

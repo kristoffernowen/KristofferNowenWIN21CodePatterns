@@ -1,5 +1,4 @@
-﻿@using Fixxo.Core.Models
-@using Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 <div class="four-products-h-grid">    
@@ -14,25 +13,6 @@
                 {
                     if (Model.Jackets.Count + Model.Shoes.Count + Model.Boots.Count + Model.HighHeels.Count < 5)
                     {
-                        @* foreach (var product in Model.GetDtos) *@
-                        @* { *@
-                        @*     if(Model is Jacket) *@
-                        @*         <partial name="_JacketPartial" model="product"/> *@
-                        @*      *@
-                        @*     if(Model is Shoes) *@
-                        @*         <partial name="_ShoesPartial" model="product"/> *@
-                        @*      *@
-                        @*     if(Model is Boots) *@
-                        @*         <partial name="_BootsPartial" model="product"/> *@
-                        @*      *@
-                        @*     if(Model is HighHeels) *@
-                        @*         <partial name="_HighHeelsPartial" model="product"/> *@
-                        @* *@
-                        @*     <partial name="ProductPartials/_ProductPartial" model="product"/> *@
-                        @* *@
-                        @*      *@
-                        @* } *@
-
                         foreach (var jacket in Model.Jackets)
                         {
                             <partial name="ProductPartials/_JacketPartial" model="jacket" />
@@ -58,29 +38,6 @@
                     {
                         for (var i = 0; i < 4; i++)
                         {
-                            if (Model.Jackets != null)
-                            {
-
-                            }
-
-
-
-                            @* if(Model is Jacket) *@
-                            @*     <partial name="_JacketPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is Shoes) *@
-                            @*     <partial name="_ShoesPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is Boots) *@
-                            @*     <partial name="_BootsPartial" model="Model.GetDtos[i]"/> *@
-                            @* *@
-                            @* if(Model is HighHeels) *@
-                            @*     <partial name="_HighHeelsPartial" model="Model.GetDtos[i]" /> *@
-
-
-                            @* <partial name="ProductPartials/_ProductPartial" model="Model.GetDtos[i]"/> *@
-
-
                             foreach (var jacket in Model.Jackets)
                             {
                                 if (i >= 4)

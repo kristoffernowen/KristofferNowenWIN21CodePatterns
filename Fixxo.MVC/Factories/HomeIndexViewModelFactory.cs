@@ -12,7 +12,7 @@ namespace Fixxo.MVC.Factories
         // var outputDtos kunde kanske brytas ner, men det känns överdrivet utan nytta
 
 
-        // 
+        
 
         public static HomeIndexViewModel Create(List<IProductInCatalog> iProductInCatalog)
         {

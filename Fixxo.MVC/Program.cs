@@ -4,10 +4,22 @@ using Fixxo.MVC.Services;
 
 /* Vet inte om jag kanske gick ifrån instruktionerna lite grann med min projektuppbyggnad, men jag tyckte verkligen om det här mönstret och det följer grundtanken med solid bra tycker jag.
  * Det separerar ansvaret iaf. Jag hade nog velat ha det här i nosql, men fick inte till det med ef core. Hade jag haft tid hade jag nog gjort om det med ren nosql. Tack vare
- * arkitekturen skulle jag bara behöva ändra på Data projektet och kanske ett interface i core och sedan lägga till nosql. Den nosql som finns här var mot ef core.
+ * arkitekturen skulle jag bara behöva ändra på Data projektet och kanske ett interface i core och sedan lägga till nosql. Den nosql som fanns här var mot ef core.
  *
- *Jag hann inte bygga färdigt det här, men jag hoppas jag gett bra exempel på solid och dry principerna ändå.
+ *Jag hann inte bygga färdigt det här, men jag hoppas jag gett bra exempel på solid och dry principerna ändå. Jag har försökt skapa interface på (nästan) allt för att kunna förlänga.
+ * Jag har separerat till olika filer men behållt några saker i en fil för jag tycker det är samma "sak" - t ex alla view för olika typer av produkter - det kunde vara en controller med
+ * bara ansvar för att skicka en details vy av lämplig produkt. Switchen för att välja rätt vy fick däremot en egen controller, för annars blir det rörigt tycker jag.
  *
+ * Jag ville visa arv enlig Liskow med Shoes och Jacket som ärver Product men ställde nog till det för mig och byggde fel efter det - meningen var att jobba mer med att allt har ett interface
+ * som länkar ihop de. Nu kan det vara att jag förlitat mig på att de ärver samma klasser istället.
+ *
+ * Jag har byggt fabriker för att lyfta bort initieringarna. DataExtensions med automapper och servicarna kanske också är ett exempel på det. Mina dto fick inga fabriker för jag initierar
+ * de aldrig, bara konverterar. Därför har de extensions som konverterar istället för fabriker.
+ *
+ * Jag har försökt hålla isär interfacen så det är ett interface till varje klass eller enskilt behov.
+ *
+ * I frontend försökte jag använda partials så jag separerar koden men också bara får en plats jag behöver ändra på. Jag hade olika partials i Home index product list och i productdetails
+ * eftersom jag måste skilja de åt då jag visar olika saker - srp.
  */
 
 

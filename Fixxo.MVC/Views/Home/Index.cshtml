@@ -1,8 +1,10 @@
 ﻿@model Fixxo.MVC.ViewModels.HomeIndexViewModel
 
 
-@* Försöker separera ansvar och dry genom att ha olika partials istället för en enda stor view, då kan jag dessutom återanvända de. Återanvända = dry och index view till index view = SRP
-   partials återanvänds, men index är bara index
+@* Försöker separera ansvar och dry genom att ha olika partials istället för en enda stor view, då kan jag dessutom återanvända de.
+    Återanvända = dry och index view till index view = SRP
+   partials återanvänds, till sitt specifika syfte, men index är bara index. Det blir lite att man bara initierar sin partial på ett ställe då (DIP)
+
 *@
 
 <div class="background-lightgrey">
