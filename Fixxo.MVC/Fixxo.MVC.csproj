@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fixxo.Data\Fixxo.Data.csproj" />
-    <ProjectReference Include="..\Fixxo.NoSqlData\Fixxo.NoSqlData.csproj" />
   </ItemGroup>
 
 </Project>
