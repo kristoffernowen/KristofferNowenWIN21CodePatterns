@@ -11,9 +11,9 @@ namespace Fixxo.MVC.Factories
         // var outputDtos kunde kanske brytas ner, men det känns överdrivet utan nytta
 
 
-        public static HomeIndexViewModel Create(List<IProduct> iProducts)
+        public static HomeIndexViewModel Create(List<IProductInCatalog> iProducts)
         {
-            var outputDtos = iProducts.Select(iProduct => iProduct as Product).Select(product => product.ToDto()).ToList();
+            var outputDtos = iProducts.Select(iProduct => iProduct as ProductInCatalog).Select(product => product.ToDto()).ToList();
 
             var model = new HomeIndexViewModel();
 

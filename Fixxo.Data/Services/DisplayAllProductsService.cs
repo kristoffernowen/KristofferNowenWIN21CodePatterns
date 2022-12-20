@@ -17,11 +17,11 @@ namespace Fixxo.Data.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<IProduct>> GetAsync()
+        public async Task<List<IProductInCatalog>> GetAsync()
         {
             var items = await _context.CatalogItems.ToListAsync();
 
-            var products = new List<IProduct>();
+            var products = new List<IProductInCatalog>();
 
             if (items == null) return products;
 
@@ -45,15 +45,15 @@ namespace Fixxo.Data.Services
                 }
             }
 
-            // var productsCasted = products.Select(product => (product) as Product).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
+            // var productsCasted = products.Select(product => (product) as ProductInCatalog).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
 
             return products;
 
         }
 
-        public List<Product> ToProduct(List<IProduct> iProducts)
+        public List<ProductInCatalog> ToProduct(List<IProductInCatalog> iProducts)
         {
-            var products = iProducts.Select(x => x as Product).ToList();
+            var products = iProducts.Select(x => x as ProductInCatalog).ToList();
             return products!;
         }
     }

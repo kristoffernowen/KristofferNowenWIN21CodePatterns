@@ -16,11 +16,11 @@ namespace Fixxo.Data.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<IProduct>> GetAsync()
+        public async Task<List<IProductInCatalog>> GetAsync()
         {
             var items = await _context.CatalogItems.ToListAsync();
 
-            var products = new List<IProduct>();
+            var products = new List<IProductInCatalog>();
 
             foreach (var item in items)
             {
@@ -37,7 +37,7 @@ namespace Fixxo.Data.Services
                 }
             }
 
-            // var productsCasted = products.Select(product => (product) as Product).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
+            // var productsCasted = products.Select(product => (product) as ProductInCatalog).ToList(); kanske fungerar om jag ändrar return type, men sideffekter...
 
             return products;
 

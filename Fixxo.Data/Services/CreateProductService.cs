@@ -16,7 +16,7 @@ public class CreateProductService : ICreateProductService
         _catalogItemService = catalogItemService;
     }
 
-    public async Task CreateAsync(Product model)
+    public async Task CreateAsync(ProductInCatalog model)
     {
         // srp - det här skapar bara en sak, fast olika klasser, tycker de kan vara i en service - ett syfte. 
         // isp - interfacet är bara hit

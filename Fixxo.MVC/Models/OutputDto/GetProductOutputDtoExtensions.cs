@@ -6,7 +6,7 @@ namespace Fixxo.MVC.Models.OutputDto;
 
 public static class GetProductOutputDtoExtensions
 {
-    public static GetProductOutputDto ToDto(this Product model)
+    public static GetProductOutputDto ToDto(this ProductInCatalog model)
     {
         // Ingen factory, för det blir nog bara här den initieras ändå. Så det känns som att jag beaktar DIP tillräckligt
         // Jag gjorde factory på modellerna i core för att testa

@@ -7,7 +7,7 @@ namespace Fixxo.MVC.Controllers
     public class HomeController : Controller
     {
 
-        // ansvarar för home view enligt srp, tror jag måste casta till Product här inne så kanske inte kan bryta ut den delen.
+        // ansvarar för home view enligt srp, tror jag måste casta till ProductInCatalog här inne så kanske inte kan bryta ut den delen.
 
         // en massa hit och dit, men för att följa idén dto i frontend delen och att separera de från modellen fick jag krångla. Kanske inte bästa lsöningen,
         // men den som funkar än så länge

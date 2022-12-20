@@ -17,8 +17,8 @@ namespace Fixxo.Data.Data
         public DbSet<HighHeelsEntity> HighHeels { get; set; }
 
 
-        // Jag ville egentligen ha sparat in ProductEntity och lagt som IProduct på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
-        // på Product, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
+        // Jag ville egentligen ha sparat in ProductEntity och lagt som IProductInCatalog på CatalogItemENtity. Sen tänker jag att jag hade kunat jobba med nån slags IDesciption
+        // på ProductInCatalog, för att kunna ha med olika beskrivningar, men jag fick inte till den biten med ef core och hinner nog inte göra om till ren nosql.
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

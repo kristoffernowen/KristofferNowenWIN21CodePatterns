@@ -19,7 +19,7 @@ using Fixxo.MVC.Services;
  *                      Då kan man ha alla i listan som implementerar det interfacet, istället för bara en klass. Skriv klasser etc med utgångspunkten att de ska vara
  *                      "små och distinkta" och att du inte ska komma tillbaka och ändra de, utan förlänga istället.
  *
- * L - Liskow substitution = undvik onödiga och förvirrande arv. Subklass ska kunna lagras i föräldraklass  a la  BaseProduct product = new Product {...}
+ * L - Liskow substitution = undvik onödiga och förvirrande arv. Subklass ska kunna lagras i föräldraklass  a la  BaseProduct product = new ProductInCatalog {...}
  *
  * I - Interface separation = (allt) ska ha ett eget interface som inte har överflödig funktion som används på andra platser
  *
